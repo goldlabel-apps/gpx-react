@@ -1,49 +1,42 @@
 import * as React from 'react'
 import {
-  Box,
   Grid,
 } from "@mui/material"
-import {Track} from "../GPXReact"
+import {
+  Track,
+  Bottombar,
+  Topbar,
+} from "../GPXReact"
 
 export default function GPXReact() {
   return (
+    <React.Fragment>
+      <Topbar />
       <Grid container>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={6}>
           <Track track={{
             title: "Maltese Islands",
-            subheader: "Diving Guide",
+            // subheader: "Diving Guide",
             route: "/track-title",
-            avatar: "/png/logo32.png",
+            icon: "doc",
             image: "/jpg/Maltese-Islands-Diving-Guide/Maltese-Islands-Diving-Guide_400.jpg",
-            info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices iaculis justo, vel ultrices sem sollicitudin eget.",
-            moreInfo: "Ut blandit lacinia leo, eget faucibus lectus finibus volutpat. Mauris consectetur commodo sodales.",
+            body: "Maltese Islands Diving Guide Paperback – July 31, 1997 by Ned Middleton",
           }}/>
         </Grid>
 
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={6}>
           <Track track={{
             title: "The Tugboat Rozi",
-            subheader: "Diving Guide",
+            // subheader: "Diving Guide",
             route: "/track-title",
-            avatar: "/png/logo32.png",
+            icon: "dive",
             image: "/jpg/The-Tugboat-Rozi/The-Tugboat-Rozi_400.jpg",
-            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices iaculis justo, vel ultrices sem sollicitudin eget.",
-            info: "Ut blandit lacinia leo, eget faucibus lectus finibus volutpat. Mauris consectetur commodo sodales.",
-          }}/>
-        </Grid>
-
-        <Grid item xs={12} sm={6} md={4}>
-          <Track track={{
-            title: "The Tugboat Rozi",
-            subheader: "Diving Guide",
-            route: "/track-title",
-            avatar: "/png/logo32.png",
-            image: "/jpg/The-Tugboat-Rozi/The-Tugboat-Rozi_400.jpg",
-            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices iaculis justo, vel ultrices sem sollicitudin eget.",
-            info: "Ut blandit lacinia leo, eget faucibus lectus finibus volutpat. Mauris consectetur commodo sodales.",
+            body: "Rozi is one of the two wrecks in Cirkewwa on the northwest side of Malta, and one of the most popular dive sites in the Maltese islands. Rozi was a former tugboat that operated in Grand Harbour of Valletta. She was scuttled in 1992 as an underwater tourist attraction for submarine tours, and also became an artificial reef for scuba divers. Tugboat Rozi wreck is easily dived from the shore, and is located close to Patrol Boat P29 wreck.",
           }}/>
         </Grid>
         
       </Grid>
+      <Bottombar />
+    </React.Fragment>
   )
 };

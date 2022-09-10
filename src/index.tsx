@@ -12,12 +12,12 @@ import {
 } from "@mui/material";
 import { 
   Shared,
-  TopMenu,
-  theme,
 } from "./features/Shared";
+import {theme} from "./features/GPXReact/utils/theme";
 import {GPXReact} from "./features/GPXReact";
 
-console.warn(`${process.env.REACT_APP_NAME} ${process.env.REACT_APP_VERSION}`);
+console.warn(`${process.env.REACT_APP_NAME} 
+${process.env.REACT_APP_VERSION} ${process.env.REACT_APP_ENV}`);
 
 export const getFeaturesStore = () => { return featuresStore }
 
@@ -32,16 +32,10 @@ root.render(
         <ThemeProvider theme={createTheme(theme())}>
           <CssBaseline />
           <Container>
-            <TopMenu />
             <Shared />
             <Grid container>
               <Switch>
-                <Route exact path="/"
-                  render={({ history }) => (
-                    <React.Fragment>
-                      <GPXReact />                    
-                    </React.Fragment>
-                  )} />
+                <Route exact path="/" render={({ history }) => (<GPXReact /> )} />
               </Switch>
             </Grid>
           </Container>

@@ -1,46 +1,21 @@
 const data = {
-  logos: [
+  tracks: [
     { 
-      label: "None",
-      value: "none",
+      label: "Track One",
+      value: {
+        title: "Track One Title",
+        icon: "home",
+      },
     },
     { 
-      label: "DT9",
-      value: "https://wei-zang.com/png/dt9.png",
-    },
-    { 
-      label: "Comparabet",
-      value: "https://wei-zang.com/png/comparabet.png",
-    },
-    { 
-      label: "SNAI",
-      value: "https://wei-zang.com/png/snai.png",
-    },
-    { 
-      label: "Swedish Chef",
-      value: "https://wei-zang.com/png/swedish-chef.png",
-    },
-    { 
-      label: "Bet 365",
-      value: "https://wei-zang.com/png/bet365.png",
-    },
-    { 
-      label: "Lambda",
-      value: "https://wei-zang.com/svg/lambda.svg",
-    },
-    { 
-      label: "Casino",
-      value: "https://wei-zang.com/png/casino.png",
-    },
-    { 
-      label: "Weedy Seadragon",
-      value: "https://wei-zang.com/png/weedy.png",
-    },
-    { 
-      label: "Anonymous",
-      value: "https://wei-zang.com/png/anon.png",
+      label: "Dive One",
+      value: {
+        title: "Two Title",
+        icon: "dive",
+      },
     },
   ],
+  
   awsRegionNames: {
     "us-east-1": "US East (N. Virginia)",
     "us-east-2": "US East (Ohio)",
@@ -61,20 +36,7 @@ const data = {
     "us-gov-west-1": "US Gov West 1",
     "us-gov-east-1": "US Gov East 1"
   },
-  brands: [
-    {
-      label: "Comparabet",
-      sk: "comparabet",
-      url: "https://comparabet.it/",
-      logo: "https://comparabet.it/wp-content/uploads/2021/01/footer_logo.png",
-    },
-    {
-      label: "Listingslab",
-      sk: "listingslab",
-      url: "https://listingslab.com",
-      logo: "https://listingslab.com/apple-touch-icon.png",
-    },
-  ],
+  
   sizes: [
     {
       label: "Banner",
@@ -123,7 +85,6 @@ const data = {
       value: "es",
     },
   ],
-
 
 }
 

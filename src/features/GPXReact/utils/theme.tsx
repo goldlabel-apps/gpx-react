@@ -1,27 +1,24 @@
 export const theme = () => {
   /*
     hot pink #fc00ff
-    sensible pink #af07b1
-    darkDT9 #3f475b
-    brightGreen #7eff00
-    less bright green #5eb906
-    weirdBlue #381beb
-    nearlyBlack #202125
-    red #b92b27
+    darkSeaBlue: "#0080bc",
+    lightSeaBlue: "#00a4e1",
   */
 
   const themeObj = {
     paperBg: "#FFFFFF",
     primaryMain: "#0080bc",
     secondaryMain: "#00a4e1",
-  }
+  };
+
+  
   
   const { paperBg, primaryMain, secondaryMain } = themeObj
 
   return ({
     palette: {
       background:{
-        default: "#eee",
+        default: "#136096",
         paper: paperBg,
       },
       primary: {
