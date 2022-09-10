@@ -1,16 +1,8 @@
 import * as React from 'react'
-import {
-  // useFeatureDispatch,
-  useFeatureSelect,
-} from "../../Shared/store/hooks"
 import { styled, alpha } from '@mui/material/styles'
 import {
   InputBase,
 } from "@mui/material"
-import { 
-  selectBanners,
-  // setBannerKey,
-} from "../../Banners"
 import {
   Icon,
 } from "../../Shared"
@@ -60,10 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function SearchInput() {
   
-  // const dispatch = useFeatureDispatch()
-  const banners = useFeatureSelect( selectBanners )
-  const { filter } = banners
-
+  const filter = "";
   const onChangeFilter = (e: any) => {
     e.preventDefault()
     // dispatch(setBannerKey({key: "filter", value: e.target.value }))

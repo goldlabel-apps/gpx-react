@@ -1,5 +1,4 @@
 // Type definitions for features
-// Project: https://github.com/DT9Media/dt9-hub-frontend
 // Definitions by: Chris D <https://github.com/listingslab>
 
 export interface NotifyShape {
@@ -9,12 +8,12 @@ export interface NotifyShape {
 }
 
 export interface BannerShape {
-    pk: string,
+    uid: string,
     sk: string,
 }
 
 export interface SiteShape {
-    pk: string,
+    uid: string,
     sk: string,
 }
 

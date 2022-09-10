@@ -1,6 +1,5 @@
 import { AppThunk } from "../../../featuresStore"
 import { setSharedKey } from "../../../Shared"
-import {archive} from "../../../Banners"
 
 export const confirm = (action: string, options?: any ): AppThunk => async (dispatch: any) => {
   try {
@@ -23,8 +22,9 @@ export const confirm = (action: string, options?: any ): AppThunk => async (disp
 export const onConfirm = (confirmed: boolean, action: string, options?: any): AppThunk => async (dispatch: any) => {
     try {
       if (confirmed && action === "banner_archive"){
-        const {pk} = options.item;
-        dispatch(archive(pk));
+        const {uid} = options.item;
+        console.log ("uid", uid);
+        // dispatch(archive(uid));
       }
       dispatch(setSharedKey({ key: 'confirming', value: null }))
     } catch (error: any) {

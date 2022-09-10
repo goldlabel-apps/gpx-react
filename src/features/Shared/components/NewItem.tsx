@@ -3,8 +3,6 @@ import {
   useFeatureSelect,
   useFeatureDispatch,
 } from "../../Shared/store/hooks"
-import { create as createBanner } from "../../Banners"
-import { create as createSite } from "../../Sites"
 import {
   EditableFieldString,
   selectShared,
@@ -30,7 +28,7 @@ export default function NewItem() {
   const {newItem, newItemValue} = shared
   
   if (!newItem) return null
-  const { icon, type, title } = newItem
+  const { icon, title } = newItem
 
   const handleClose = () => {
     dispatch(setSharedKey({key: "newItem", value: null }))
@@ -38,8 +36,6 @@ export default function NewItem() {
   }
 
   const handleCreate = () => {
-    if (type === "banner") dispatch(createBanner(newItemValue))
-    if (type === "site") dispatch(createSite(newItemValue))
     handleClose()
   }
 

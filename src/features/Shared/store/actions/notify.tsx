@@ -7,7 +7,7 @@ export const notify = (payload: any): AppThunk => async (dispatch: any) => {
 
     // let editing: any = null
     // if (item) editing = {
-    //   pk: item.pk,
+    //   uid: item.uid,
     //   type,
     //   item,
     //   pristine: true,

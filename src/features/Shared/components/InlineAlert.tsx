@@ -1,28 +1,15 @@
 import * as React from 'react'
 import {
-  useFeatureSelect,
-} from "../../Shared/store/hooks"
-import {
-  selectSites,
-} from "../../Sites"
-import {
-  selectBanners,
-} from "../../Banners"
-import {
   Alert,
   Typography,
   AlertColor,
 } from "@mui/material"
 
-
-
 export default function InlineAlert(props: any) {
-  const { slice } = props
-  const sites = useFeatureSelect(selectSites)
-  const banners = useFeatureSelect(selectBanners)
+  const { slice } = props;
+  console.log ("slice", slice);
   let sliceData = null
-  if (slice === "sites") sliceData = sites
-  if ( slice === "banners") sliceData = banners
+
   if ( !sliceData ) return null
   // @ts-ignore
   const { error } = sliceData

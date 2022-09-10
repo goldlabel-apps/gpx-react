@@ -4,8 +4,6 @@ import {
   useFeatureDispatch,
   useFeatureSelect,
 } from "../../Shared/store/hooks"
-import { update as updateBanner } from "../../Banners";
-import { update as updateSite } from "../../Sites";
 import {
   setSharedKey,
   selectShared,
@@ -21,9 +19,6 @@ import {
   Typography,
 } from "@mui/material"
 import { Icon } from "../"
-import {BannerForm} from "../../Banners"
-import {SiteForm} from "../../Sites"
-
 type Anchor = 'right';
 
 export default function EditDrawer() {
@@ -36,25 +31,13 @@ export default function EditDrawer() {
   const shared = useFeatureSelect(selectShared)
   const {editing} = shared
   if (!editing) return null
-  const {pk, type, item, pristine} = editing
+  const {uid, type, item, pristine} = editing
   let updated = null
   const {sk} = item;
   let formEl: any = null;
-  if (type === "banner") {
-    formEl = <BannerForm />;
-    updated = item.meta.updated
-  }
-  if (type === "site") {
-    formEl = <SiteForm />;
-  }
 
   const onSaveChanges = (type: string) => {
-    if (type === "banner") {
-      dispatch(updateBanner());
-    }
-    if (type === "site") {
-      dispatch(updateSite(editing));
-    }
+    
     return true;
   }
 
@@ -113,7 +96,7 @@ export default function EditDrawer() {
                               Updated {moment(updated).fromNow()}
                           </Typography>
                           <Typography variant="body2" sx={{color:"rgba(0,0,0,0.15)"}}>
-                              {`pk: ${pk}`}
+                              {`uid: ${uid}`}
                           </Typography>
                           <Typography variant="body2" sx={{color:"rgba(0,0,0,0.15)"}}>
                               {`sk: ${sk}`}

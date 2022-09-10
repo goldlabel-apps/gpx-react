@@ -25,7 +25,6 @@ import { onConfirm } from "./store/actions/confirm"
 import { addItem } from "./store/actions/addItem"
 import { filterBanners } from "./utils/filterBanners"
 import { bubbleSort } from "./utils/bubbleSort"
-import { getBannerByPk } from "./utils/getBannerByPk"
 import {
   selectShared,
   setSharedKey,
@@ -62,5 +61,4 @@ export {
   SelectLogo,
   SelectBackground,
   bubbleSort,
-  getBannerByPk,
 }

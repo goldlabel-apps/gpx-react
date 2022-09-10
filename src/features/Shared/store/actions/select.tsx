@@ -5,7 +5,7 @@ export const select = (item: any, type: string): AppThunk => async (dispatch: an
   try {
     let editing: any = null
     if (item) editing = {
-      pk: item.pk,
+      uid: item.uid,
       type,
       item,
       pristine: true,

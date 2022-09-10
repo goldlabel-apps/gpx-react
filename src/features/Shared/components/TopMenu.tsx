@@ -28,33 +28,14 @@ export default function TopMenu() {
 
   return (
       <Box sx={{ display: "flex", mt:3, mb:1}}>  
-          <Link to="/">
-            <IconButton
-              color="primary"
-              sx={{ mr: 1, mt:-1.5 }}
-            >
-              <Icon icon="home"/>
-            </IconButton>
-          </Link>
-          
-          <Link to="/banners">
-            <IconButton
-                color="primary"
-                sx={{ mr: 1, mt:-1.5 }}
-              >
-              <Icon icon="banners"/>
-            </IconButton>
-          </Link>
-        
-          <Link to="/sites">
-            <IconButton
-              color="primary"
-              sx={{ mr: 0, mt:-1.5 }}
-            >
-              <Icon icon="sites"/>
-            </IconButton>
-          </Link>
-        
+        <Link to="/">
+          <IconButton
+            color="primary"
+            sx={{ mr: 1, mt:-1.5 }}
+          >
+            <Icon icon="home"/>
+          </IconButton>
+        </Link>
         <Box sx={{ flexGrow: 1 }} />
 
         <IconButton
@@ -70,8 +51,23 @@ export default function TopMenu() {
           open={open}
           onClose={ closeMenu }>
 
+
+          <MenuItem sx={{width: 200}} onClick={() =>{
+            window.open("https://gpx-react.web.app/", "_blank")
+            closeMenu()
+          }}>
+            <ListItemIcon>
+              <Icon icon="site" color="primary" />
+            </ListItemIcon>
+            <ListItemText>
+              <Typography variant="body2">
+                Prod
+              </Typography>
+            </ListItemText>
+          </MenuItem>
+
         <MenuItem sx={{width: 200}} onClick={() =>{
-            window.open("https://github.com/DT9Media/dt9-workspace/tree/release/0.1.9/frontend", "_blank")
+            window.open("https://github.com/listingslab-software/gpx-react", "_blank")
             closeMenu()
           }}>
             <ListItemIcon>
@@ -84,8 +80,10 @@ export default function TopMenu() {
             </ListItemText>
           </MenuItem>
 
+          
+
           <MenuItem sx={{width: 200}} onClick={() =>{
-            window.open("http://localhost:3000/dynamic-banners", "_blank")
+            window.open("https://console.firebase.google.com/u/0/project/gpx-react/overview", "_blank")
             closeMenu()
           }}>
             <ListItemIcon>
@@ -93,27 +91,11 @@ export default function TopMenu() {
             </ListItemIcon>
             <ListItemText>
               <Typography variant="body2">
-              Lambda API
+                Firebase
               </Typography>
             </ListItemText>
           </MenuItem>
           
-          
-
-          <MenuItem sx={{width: 200}} onClick={() =>{
-            window.open("http://localhost:8001/", "_blank")
-            closeMenu()
-          }}>
-            <ListItemIcon>
-              <Icon icon="table" color="primary"/>
-            </ListItemIcon>
-            <ListItemText>
-              <Typography variant="body2">
-                Dynamo DB
-              </Typography>
-            </ListItemText>
-          </MenuItem>
-
           <MenuItem sx={{width: 200}} onClick={() =>{            
             window.open("/", "_self")
             closeMenu()
