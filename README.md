@@ -11,23 +11,34 @@ This is a React Progressive Web App. It uses data created using a Garmin Decent 
 
 Parts of the app are available free on GitHub public repositories. Some are not.
 
-```javascript
-const data = {
-  logos: [
-    { 
-      label: "None",
-      value: "none",
-    },
-    { 
-      label: "DT9",
-      value: "https://wei-zang.com/png/dt9.png",
-    },
-    { 
-      label: "Comparabet",
-      value: "https://wei-zang.com/png/comparabet.png",
-    },
-    { 
-      label: "SNAI",
-      value: "https://wei-za
+[index.tsx](https://github.com/listingslab-software/gpx-react/blob/master/src/index.tsx)
 
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { 
+  Route, 
+  Switch, 
+  BrowserRouter as Router 
+} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { featuresStore } from './features/featuresStore';
+import { 
+  Grid, Container, createTheme, 
+  ThemeProvider, CssBaseline,
+} from "@mui/material";
+import { 
+  Shared,
+  TopMenu,
+  theme,
+} from "./features/Shared";
+
+console.warn(`${process.env.REACT_APP_NAME} ${process.env.REACT_APP_VERSION}`);
+
+export const getFeaturesStore = () => { return featuresStore }
+
+const root = ReactDOM.createRoot(
+  document.getElementById('gpx-react') as HTMLElement
+)
+...
 ```
