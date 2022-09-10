@@ -16,8 +16,7 @@ import {
 import {theme} from "./features/GPXReact/utils/theme";
 import {GPXReact} from "./features/GPXReact";
 
-console.warn(`${process.env.REACT_APP_NAME} 
-${process.env.REACT_APP_VERSION} ${process.env.REACT_APP_ENV}`);
+console.warn(`${process.env.REACT_APP_NAME} ${process.env.REACT_APP_VERSION} ${process.env.REACT_APP_ENV}`);
 
 export const getFeaturesStore = () => { return featuresStore }
 

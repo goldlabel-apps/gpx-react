@@ -36,6 +36,8 @@ export default function Track(props:any) {
   };
 
   const {track} = props;
+  if (!track) return null;
+
   const {
     title,
     subheader,

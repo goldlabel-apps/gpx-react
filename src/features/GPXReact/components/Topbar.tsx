@@ -10,9 +10,13 @@ import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import {Icon} from "../../Shared";
+
+import {
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material"
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -95,8 +99,49 @@ export default function Topbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem sx={{width: 200}} onClick={() =>{
+        window.open("https://gpx-react.web.app/", "_blank")
+        handleMenuClose()
+      }}>
+        <ListItemIcon>
+          <Icon icon="site" color="primary" />
+        </ListItemIcon>
+        <ListItemText>
+          <Typography variant="body2">
+            Prod
+          </Typography>
+        </ListItemText>
+      </MenuItem>
+      
+      <MenuItem sx={{width: 200}} onClick={() =>{
+        window.open("https://github.com/listingslab-software/gpx-react", "_blank")
+        handleMenuClose()
+      }}>
+        <ListItemIcon>
+          <Icon icon="github" color="primary" />
+        </ListItemIcon>
+        <ListItemText>
+          <Typography variant="body2">
+            Git
+          </Typography>
+        </ListItemText>
+      </MenuItem>
+
+      <MenuItem sx={{width: 200}} onClick={() =>{            
+            window.open("/", "_self")
+            handleMenuClose()
+          }}>
+        <ListItemIcon>
+          <Icon icon="refresh" color="primary"/>
+        </ListItemIcon>
+        <ListItemText>
+          <Typography variant="body2">
+            Reset
+          </Typography>
+        </ListItemText>
+      </MenuItem>
+
+
     </Menu>
   );
 
@@ -117,37 +162,50 @@ export default function Topbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton color="inherit">
-          <Badge badgeContent={4}>
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+      
+      
+      <MenuItem sx={{width: 200}} onClick={() =>{
+        window.open("https://gpx-react.web.app/", "_blank")
+        handleMenuClose()
+      }}>
+        <ListItemIcon>
+          <Icon icon="site" color="primary" />
+        </ListItemIcon>
+        <ListItemText>
+          <Typography variant="body2">
+            Prod
+          </Typography>
+        </ListItemText>
       </MenuItem>
-      <MenuItem>
-        <IconButton
-          color="inherit"
-        >
-          <Badge badgeContent={17}>
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+      
+      <MenuItem sx={{width: 200}} onClick={() =>{
+        window.open("https://github.com/listingslab-software/gpx-react", "_blank")
+        handleMenuClose()
+      }}>
+        <ListItemIcon>
+          <Icon icon="github" color="primary" />
+        </ListItemIcon>
+        <ListItemText>
+          <Typography variant="body2">
+            Git
+          </Typography>
+        </ListItemText>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account"
-          aria-controls="topbar-search"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <Badge badgeContent={5}>
-            <Icon icon="user" />
-          </Badge>
-        </IconButton>
-        <p>Profile</p>
+
+      <MenuItem sx={{width: 200}} onClick={() =>{            
+            window.open("/", "_self")
+            handleMenuClose()
+          }}>
+        <ListItemIcon>
+          <Icon icon="refresh" color="primary"/>
+        </ListItemIcon>
+        <ListItemText>
+          <Typography variant="body2">
+            Reset
+          </Typography>
+        </ListItemText>
       </MenuItem>
+
     </Menu>
   );
 
@@ -196,7 +254,7 @@ export default function Topbar() {
               color="inherit"
             >
               <Badge badgeContent={0} color="secondary">
-                <Icon icon="user" />
+                <Icon icon="menu" />
               </Badge>
             </IconButton>
           </Box>

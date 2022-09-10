@@ -51,7 +51,6 @@ export default function TopMenu() {
           open={open}
           onClose={ closeMenu }>
 
-
           <MenuItem sx={{width: 200}} onClick={() =>{
             window.open("https://gpx-react.web.app/", "_blank")
             closeMenu()
