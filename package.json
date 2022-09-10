@@ -1,11 +1,12 @@
 {
   "name": "gpx-react",
   "description": "View, Edit & Share Geodata using React & Material UI",
-  "version": "2.2.9",
+  "version": "2.3.0",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "deploy": "clear && npm run build && firebase deploy"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",

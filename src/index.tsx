@@ -15,6 +15,7 @@ import {
   TopMenu,
   theme,
 } from "./features/Shared";
+import {GPXReact} from "./features/GPXReact";
 
 console.warn(`${process.env.REACT_APP_NAME} ${process.env.REACT_APP_VERSION}`);
 
@@ -38,7 +39,7 @@ root.render(
                 <Route exact path="/"
                   render={({ history }) => (
                     <React.Fragment>
-                      GPX                    
+                      <GPXReact />                    
                     </React.Fragment>
                   )} />
               </Switch>

@@ -11,7 +11,7 @@ This is a React Progressive Web App. It uses data created using a Garmin Decent 
 
 Parts of the app are available free on GitHub public repositories. Some are not.
 
-[index.tsx](https://github.com/listingslab-software/gpx-react/blob/master/src/index.tsx)
+eg: [index.tsx](https://github.com/listingslab-software/gpx-react/blob/master/src/index.tsx)
 
 ```javascript
 import React from 'react';

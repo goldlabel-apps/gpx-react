@@ -1,7 +1,7 @@
 import GPXReact from "./GPXReact";
-import PingpongballIcon from "./components/PingpongballIcon";
+import Track from "./components/Track";
 
 export {
   GPXReact,
-  PingpongballIcon,
+  Track,
 }

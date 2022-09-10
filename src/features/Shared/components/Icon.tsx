@@ -10,6 +10,7 @@ import TextIcon from "@mui/icons-material/TextFields"
 import AddDocIcon from "@mui/icons-material/PostAdd"
 import TableChartIcon from "@mui/icons-material/StorageOutlined"
 import CSVIcon from "@mui/icons-material/FileUpload"
+import DivingIcon from "@mui/icons-material/ScubaDiving"
 import DevtoolsIcon from "@mui/icons-material/BugReport"
 import NotifyIcon from "@mui/icons-material/Notifications"
 import ListIcon from "@mui/icons-material/List"
@@ -185,6 +186,14 @@ export default function Icon(props: any) {
       iconFragment = <LinkedInIcon color={color} />
       break
 
+    case "diving":
+      iconFragment = <DivingIcon color={color} />
+      break
+    
+    case "dive":
+      iconFragment = <DivingIcon color={color} />
+      break
+      
     case "clinical":
       iconFragment = <ClinicalIcon color={color} />
       break

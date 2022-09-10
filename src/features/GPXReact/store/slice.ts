@@ -1,47 +1,43 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from "../../featuresStore"
-import {fakeData} from "../../fakeData"
+import {data} from "../data"
 
-export interface SharedSlice {
-  fakeData: any
+export interface GPXReactSlice {
+  data: any
   error: any
   editing: any
   notifying: any
   confirming: any
   newItem: any
   newItemValue: string
-  logos: any
-  backgroundImages: any
 }
 
-const initialState: SharedSlice = {
-  fakeData,
+const initialState: GPXReactSlice = {
+  data,
   error: null,
   editing: null,
   confirming: null,
   notifying: null,
   newItem: null,
   newItemValue: "",
-  logos: fakeData.logos,
-  backgroundImages: fakeData.backgroundImages,
 }
 
-export const sharedSlice = createSlice({
-  name: 'shared',
+export const gpxreactSlice = createSlice({
+  name: 'gpxreact',
   initialState,
   reducers: {
     edit: (state, action: PayloadAction<any>) => {
-      const { key, value, subKey } = action.payload
+      const { key, value, subKey } = action.payload;
+      state.editing.pristine = false;
       if (subKey){
         // @ts-ignore
-        state.editing.item[subKey][key] = value
+        state.editing.item[subKey][key] = value;
       } else {
         // @ts-ignore
-        state.editing.item[key] = value
+        state.editing.item[key] = value;
       }
-      state.editing.pristine = false
     },
-    setSharedKey: (state, action: PayloadAction<any>) => {
+    setGPXReactKey: (state, action: PayloadAction<any>) => {
       const { key, value } = action.payload
       // @ts-ignore
       state[key] = value
@@ -49,9 +45,9 @@ export const sharedSlice = createSlice({
   },
 })
 
-export const selectShared = (state: RootState) => state.shared
+export const selectGPXReact = (state: RootState) => state.gpxreact;
 export const { 
-  setSharedKey,
+  setGPXReactKey,
   edit,
-} = sharedSlice.actions
-export default sharedSlice.reducer
+} = gpxreactSlice.actions;
+export default gpxreactSlice.reducer;
