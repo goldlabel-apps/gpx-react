@@ -34,9 +34,12 @@ export default function Bottombar() {
           
           <Box sx={{ flexGrow: 1 }} />
           
-          <IconButton color="secondary">
-            <Icon icon="up" />
-          </IconButton>
         </Toolbar>
       </AppBar>);
 }
+
+/*
+<IconButton color="secondary">
+            <Icon icon="up" />
+          </IconButton>
+*/

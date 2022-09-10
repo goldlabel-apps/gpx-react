@@ -20,7 +20,7 @@ import {
   navigateTo,
 } from "../../Shared";
 import {
-  next,
+  // next,
   share,
 } from "../../GPXReact";
 
@@ -40,6 +40,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function Track(props:any) {
+
   const dispatch = useFeatureDispatch();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -59,55 +60,74 @@ export default function Track(props:any) {
     body,
   } = track;
 
+  let hasImage = false;
+  if(image && image !== "") hasImage = true;
+  
   return (
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
         <CardHeader
-          avatar={<Icon icon={icon} color="primary" />}
-          action={<IconButton 
-                    color="primary"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      dispatch(navigateTo(uid));
-                    }}>
-                    <Icon icon="right" />
+          avatar={<IconButton>
+                    <Icon icon={icon} color="primary" />
                   </IconButton>}
+          action={<React.Fragment>
+            
+            <ExpandMore
+              expand={expanded}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <Icon icon="acc" color="secondary" />
+            </ExpandMore>
+
+
+            </React.Fragment>}
           title={title}
           subheader={subheader}
         />
-        <CardMedia
-          component="img"
-          height="256"
-          image={image}
-          alt={title}
-        />
         
-        <CardActions disableSpacing>
-          <IconButton
-            color="secondary"
-            onClick={(e) => {
-              e.preventDefault();
-              dispatch(share(uid));
-            }}>
-            <Icon icon="share" />
-          </IconButton>
-          <ExpandMore
-            expand={expanded}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <Icon icon="acc" color="secondary" />
-          </ExpandMore>
-        </CardActions>
+        
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
+
+          {hasImage && expanded ? <CardMedia
+                      component="img"
+                      height="200"
+                      image={image}
+                      alt={title}
+                    /> : null }
+
+            <IconButton 
+              color="primary"
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(navigateTo(track));
+              }}>
+              <Icon icon="meta" />
+            </IconButton>
+
+            <IconButton
+              color="primary"
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(share(uid));
+              }}>
+              <Icon icon="share" />
+            </IconButton>
+
             <Typography variant="body2">
               {body}
             </Typography>
+
           </CardContent>
         </Collapse>
+
+        
       </Card>
     </Box>
   );
 }
+
+/*
+*/

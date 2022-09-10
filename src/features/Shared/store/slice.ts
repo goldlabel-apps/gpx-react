@@ -1,29 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from "../../featuresStore"
-import {fakeData} from "../../fakeData"
 
 export interface SharedSlice {
-  fakeData: any
   error: any
   editing: any
   notifying: any
   confirming: any
   newItem: any
   newItemValue: string
-  logos: any
-  backgroundImages: any
+  route: any
 }
 
 const initialState: SharedSlice = {
-  fakeData,
   error: null,
+  route: {
+    shouldUpdate: false,
+    this: 123,
+  },
   editing: null,
   confirming: null,
   notifying: null,
   newItem: null,
   newItemValue: "",
-  logos: fakeData.logos,
-  backgroundImages: fakeData.backgroundImages,
 }
 
 export const sharedSlice = createSlice({

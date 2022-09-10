@@ -30,7 +30,7 @@ export default function GPXReact() {
           { tracks.map((item: any, i: number) => {
             return (<Grid 
                       key={`track_${i}`}
-                      item xs={12} sm={6} md={6}>
+                      item xs={12} sm={6} md={4} lg={3}>
                       <Track track={item.value}/>
                     </Grid>)
           })}
