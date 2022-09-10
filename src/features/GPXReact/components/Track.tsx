@@ -1,5 +1,10 @@
 import * as React from 'react';
+import {
+  // useFeatureSelect,
+  useFeatureDispatch,
+} from "../../Shared/store/hooks";
 import { styled } from '@mui/material/styles';
+import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import {
   Box,
   Card,
@@ -10,8 +15,14 @@ import {
   Collapse,
   Typography
 } from "@mui/material"
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import {Icon} from "../../Shared";
+import {
+  Icon,
+  navigateTo,
+} from "../../Shared";
+import {
+  next,
+  share,
+} from "../../GPXReact";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -29,6 +40,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function Track(props:any) {
+  const dispatch = useFeatureDispatch();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -39,6 +51,7 @@ export default function Track(props:any) {
   if (!track) return null;
 
   const {
+    uid,
     title,
     subheader,
     image,
@@ -50,8 +63,13 @@ export default function Track(props:any) {
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
         <CardHeader
-          avatar={<Icon icon={icon} color="secondary" />}
-          action={<IconButton color="secondary">
+          avatar={<Icon icon={icon} color="primary" />}
+          action={<IconButton 
+                    color="primary"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      dispatch(navigateTo(uid));
+                    }}>
                     <Icon icon="right" />
                   </IconButton>}
           title={title}
@@ -65,16 +83,14 @@ export default function Track(props:any) {
         />
         
         <CardActions disableSpacing>
-          <IconButton 
+          <IconButton
             color="secondary"
             onClick={(e) => {
               e.preventDefault();
-              console.log("share")
+              dispatch(share(uid));
             }}>
             <Icon icon="share" />
           </IconButton>
-
-          
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
@@ -86,10 +102,9 @@ export default function Track(props:any) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>
+            <Typography variant="body2">
               {body}
             </Typography>
-
           </CardContent>
         </Collapse>
       </Card>

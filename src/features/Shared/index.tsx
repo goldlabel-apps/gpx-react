@@ -1,5 +1,4 @@
 import Shared from "./Shared"
-
 import SearchInput from "./components/SearchInput"
 import EditableFieldString from "./components/EditableFieldString"
 import EditableFieldSelect from "./components/EditableFieldSelect"
@@ -20,6 +19,7 @@ import useClickOutside from "./utils/useClickOutside"
 import { getLangDisplayName } from "./utils/getLangDisplayName"
 import { theme } from "./utils/theme"
 import { select } from "./store/actions/select"
+import { navigateTo } from "./store/actions/navigateTo"
 import { confirm } from "./store/actions/confirm"
 import { onConfirm } from "./store/actions/confirm"
 import { addItem } from "./store/actions/addItem"
@@ -61,4 +61,5 @@ export {
   SelectLogo,
   SelectBackground,
   bubbleSort,
+  navigateTo,
 }
