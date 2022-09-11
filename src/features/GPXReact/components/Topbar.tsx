@@ -57,6 +57,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Topbar() {
+
+  const showSearch = false;
   
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const isMenuOpen = Boolean(anchorEl);
@@ -109,9 +111,7 @@ export default function Topbar() {
               onClick={handleMenuOpen}
               color="inherit"
             >
-              <Badge badgeContent={3}>
                 <Icon icon="menu"/>
-              </Badge>
             </IconButton>
 
             <IconButton
@@ -123,9 +123,7 @@ export default function Topbar() {
               }}
               color="inherit"
             >
-              <Badge badgeContent={2}>
-                <Icon icon="dive" />
-              </Badge>
+                <Icon icon="diving" />
             </IconButton>
 
             <IconButton
@@ -137,15 +135,15 @@ export default function Topbar() {
               }}
               color="inherit"
             >
-              <Badge badgeContent={1}>
                 <Icon icon="spearo" />
-              </Badge>
+              
             </IconButton>
 
 
           </Box>
           <Box sx={{flexGrow:1}}/>
-          <Search>
+
+          { showSearch ? <Search>
             <SearchIconWrapper>
               <Icon icon="search" />
             </SearchIconWrapper>
@@ -155,7 +153,21 @@ export default function Topbar() {
                 'aria-label': 'search',
               }}
             />
-          </Search>
+          </Search> : null }
+          
+          <IconButton
+              aria-label="diving"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={()=>{
+                window.open("/diving", "_self");
+              }}
+              color="inherit"
+            >
+              <Badge badgeContent={2} color="primary">
+                <Icon icon="user" />
+              </Badge>
+            </IconButton>
         </Toolbar>
       </AppBar>
       {renderMenu}

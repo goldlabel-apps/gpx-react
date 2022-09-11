@@ -93,15 +93,9 @@ export default function GPXMap(props:any) {
           subheader={subheader}
         />
 
-        {hasImage ? <CardMedia
-                      sx={{ 
-                        cursor: "pointer", 
-                      }}
-                      onClick={() => {
-                        dispatch(navigateTo(track));
-                      }}
+        { hasImage ? <CardMedia
                       component="img"
-                      height="175"
+                      height={ mode === "single" ? 350 : 175 }
                       image={image}
                       alt={title}
                     /> : null }
