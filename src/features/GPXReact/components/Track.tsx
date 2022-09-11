@@ -11,7 +11,6 @@ import {
   CardHeader,
   CardMedia,
   CardContent,
-  CardActions,
   Collapse,
   Typography
 } from "@mui/material"
@@ -66,9 +65,12 @@ export default function Track(props:any) {
   return (
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
-      
         <CardHeader
-          avatar={<IconButton>
+          avatar={<IconButton
+                    onClick={() => {
+                      dispatch(navigateTo(track));
+                    }}
+                  >
                     <Icon icon={icon} color="primary" />
                   </IconButton>}
           action={<React.Fragment>
@@ -86,8 +88,14 @@ export default function Track(props:any) {
         />
 
         {hasImage ? <CardMedia
+                      sx={{ 
+                        cursor: "pointer", 
+                      }}
+                      onClick={() => {
+                        dispatch(navigateTo(track));
+                      }}
                       component="img"
-                      height="200"
+                      height="175"
                       image={image}
                       alt={title}
                     /> : null }
@@ -99,15 +107,13 @@ export default function Track(props:any) {
               color="primary"
               onClick={(e) => {
                 e.preventDefault();
-                dispatch(share(uid));
+                dispatch(share(track));
               }}>
               <Icon icon="share" />
             </IconButton>
-
             <Typography variant="body2">
               {body}
             </Typography>
-
           </CardContent>
         </Collapse>
 

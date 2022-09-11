@@ -5,19 +5,14 @@ import {
   Box,
   Toolbar,
   IconButton,
-  Typography,
   InputBase,
   Badge,
-  MenuItem,
   Menu,
 } from "@mui/material"
-import {Icon} from "../../Shared";
-import {MenuItems} from "../../GPXReact";
-
 import {
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material"
+  MenuItems,
+  GPXIcon,
+} from "../../GPXReact";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,67 +54,35 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Topbar() {
+  
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    React.useState<null | HTMLElement>(null);
-
   const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+  
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
   };
 
   const handleMenuClose = () => {
     setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = 'topbar-search';
   const renderMenu = (
     <Menu
+      sx={{mt:3, ml: 3}}  
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'top',
-        horizontal: 'right',
+        horizontal: 'left',
       }}
       id={menuId}
       keepMounted
       transformOrigin={{
         vertical: 'top',
-        horizontal: 'right',
+        horizontal: 'left',
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    >
-      <MenuItems />
-    </Menu>
-  );
-
-  const mobileMenuId = 'topbar-search-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
     >
       <MenuItems />
     </Menu>
@@ -135,39 +98,23 @@ export default function Topbar() {
         }}>
         <Toolbar>
           
-          <Box sx={{ display: { xs: 'none', md: 'none' } }}>
+          <Box sx={{ ml: -3 }}>
             <IconButton
-              edge="end"
               aria-label="user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              onClick={handleMenuOpen}
               color="inherit"
             >
               <Badge badgeContent={0} color="secondary">
-                <Icon icon="gpx" />
+                <GPXIcon icon="home" />
               </Badge>
-            </IconButton>
-          </Box>
-
-          <Box sx={{ 
-            display: { xs: 'flex', md: 'none' },
-            ml: -3,
-          }}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <Icon icon="menu" />
             </IconButton>
           </Box>
 
           <Search>
             <SearchIconWrapper>
-              <Icon icon="filter" />
+              <GPXIcon icon="search" />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Tracks"
@@ -178,7 +125,6 @@ export default function Topbar() {
           </Search>
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
       {renderMenu}
     </React.Fragment>
   );

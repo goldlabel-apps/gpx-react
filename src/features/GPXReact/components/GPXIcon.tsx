@@ -1,7 +1,8 @@
-import * as React from "react"
-import DefaultIcon from "@mui/icons-material/DisabledByDefault"
-import HomeIcon from "@mui/icons-material/Home"
-import TimemachineIcon from "./TimemachineIcon"
+import * as React from "react";
+import TimemachineIcon from "./TimemachineIcon";
+import DefaultIcon from "@mui/icons-material/DisabledByDefault";
+import SearchIcon from "@mui/icons-material/SortOutlined";
+import HomeIcon from "@mui/icons-material/HomeOutlined";
 
 export default function GPXIcon(props: any) {
   let { icon, color } = props;
@@ -12,6 +13,10 @@ export default function GPXIcon(props: any) {
     case "home":
       iconFragment = <HomeIcon color={color} />
       break
+
+      case "search":
+        iconFragment = <SearchIcon color={color} />
+        break
 
       case 'gpx':
         iconFragment = <TimemachineIcon color={color} />

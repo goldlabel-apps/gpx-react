@@ -11,15 +11,25 @@
  *~ Otherwise, delete this declaration.
  */
  export as namespace gpxReact;
- /*~ If this module exports functions, declare them like so.
-  */
- export function myFunction(a: string): string;
- export function myOtherFunction(a: number): number;
+
+
  /*~ You can declare types that are available via importing the module */
- export interface GpXReact {
+ export interface GPXReact {
    name: string;
    length: number;
    extras?: string[];
  }
+
+ export interface GPXReactTrack {
+  name: string;
+  length: number;
+  extras?: string[];
+}
+
+ /*~ If this module exports functions, declare them like so.
+  */
+ export function myFunction(a: string): string;
+ export function myOtherFunction(a: number): number;
+ 
  /*~ You can declare properties of the module using const, let, or var */
 //  export const myField: number;

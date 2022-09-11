@@ -1,53 +1,66 @@
 import * as React from 'react';
 import {
-  AppBar,
-  Toolbar,
-  IconButton,
   Typography,
-  InputBase,
-  Badge,
   MenuItem,
-  Menu,
-} from "@mui/material"
-import {Icon} from "../../Shared";
-import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material"
+import {Icon} from "../../Shared";
 
 export default function MenuItems() {
 
     const handleMenuClose = () => {
         return false;
     }
+    let isProd = true;
+    const host = window.location.host;
+    if (host !== process.env.REACT_APP_PROD_HOST) isProd = false;
+    
     return (
         <React.Fragment>
-            <MenuItem sx={{width: 200}} onClick={() =>{
+
+            <MenuItem sx={{width: 200}} onClick={() => {
+                window.open("/", "_self")
+                handleMenuClose()
+            }}>
+                <ListItemIcon>
+                    <Icon icon="home" color="primary" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="body2">
+                        Home
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+
+
+
+            { !isProd ? <MenuItem sx={{width: 200}} onClick={() =>{
                 window.open("https://gpx-react.web.app/", "_blank")
                 // handleMenuClose()
             }}>
-            <ListItemIcon>
-                <Icon icon="site" color="primary" />
-            </ListItemIcon>
-            <ListItemText>
-                <Typography variant="body2">
-                Prod
-                </Typography>
-            </ListItemText>
-            </MenuItem>
+                <ListItemIcon>
+                    <Icon icon="site" color="primary" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="body2">
+                    PROD
+                    </Typography>
+                </ListItemText>
+            </MenuItem> : null }
             
-            <MenuItem sx={{width: 200}} onClick={() =>{
-            window.open("https://github.com/listingslab-software/gpx-react", "_blank")
-            // handleMenuClose()
+            <MenuItem sx={{width: 200}} onClick={() => {
+                window.open("https://github.com/listingslab-software/gpx-react", "_blank")
+                handleMenuClose()
             }}>
-            <ListItemIcon>
-                <Icon icon="github" color="primary" />
-            </ListItemIcon>
-            <ListItemText>
-                <Typography variant="body2">
-                Git
-                </Typography>
-            </ListItemText>
+                <ListItemIcon>
+                    <Icon icon="github" color="primary" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="body2">
+                        Open Source
+                    </Typography>
+                </ListItemText>
             </MenuItem>
 
             <MenuItem sx={{width: 200}} onClick={() =>{            
@@ -59,13 +72,10 @@ export default function MenuItems() {
             </ListItemIcon>
             <ListItemText>
                 <Typography variant="body2">
-                Reset
+                    Reset
                 </Typography>
             </ListItemText>
             </MenuItem>    
         </React.Fragment>
     );
 }
-
-/*
-*/
