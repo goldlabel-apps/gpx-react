@@ -39,7 +39,8 @@ export default function GPXMap(props:any) {
   const dispatch = useFeatureDispatch();
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => setExpanded(!expanded);
-  const {track} = props;
+  const {track, setMode} = props;
+
   if (!track) return null;
 
   const {
@@ -51,19 +52,33 @@ export default function GPXMap(props:any) {
   } = track.value;
   let hasImage = false;
   if(image && image !== "") hasImage = true;
-  
+
+  let mode = "list";
+  if (setMode) mode = setMode;
   return (
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
         <CardHeader
-          avatar={<IconButton
+          avatar={<React.Fragment>
+
+            { mode === "single" ? <IconButton
+                    onClick={() => {
+                      window.open("/", "_self");
+                    }}
+                  >
+                    <Icon icon={"home"} color="primary" />
+                  </IconButton> : null }
+
+                  <IconButton
+                    disabled={ mode === "single" ? true : false }
                     onClick={() => {
                       dispatch(navigateTo(track));
                     }}
                   >
                     <Icon icon={icon} color="primary" />
-                  </IconButton>}
-          action={<React.Fragment>
+                  </IconButton>
+                </React.Fragment>}
+          action={ mode !== "single" ? <React.Fragment>
                     <ExpandMore
                       expand={expanded}
                       onClick={handleExpandClick}
@@ -72,7 +87,7 @@ export default function GPXMap(props:any) {
                     >
                       <Icon icon="acc" color="secondary" />
                     </ExpandMore>
-                    </React.Fragment>}
+                    </React.Fragment> : null}
           title={ title }
           subheader={subheader}
         />
@@ -96,15 +111,6 @@ export default function GPXMap(props:any) {
             </Typography>
           </CardContent>
           <CardActions>
-          <IconButton 
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(navigateTo(track));
-              }}>
-              <Icon icon="meta" />
-            </IconButton>
-
             <IconButton
               color="primary"
               onClick={(e) => {
@@ -114,7 +120,6 @@ export default function GPXMap(props:any) {
               <Icon icon="share" />
             </IconButton>
           </CardActions>
-        
       </Card>
     </Box>
   );

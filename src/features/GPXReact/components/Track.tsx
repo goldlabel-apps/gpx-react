@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  // useFeatureSelect,
   useFeatureDispatch,
 } from "../../Shared/store/hooks";
 import { Link } from "react-router-dom";
@@ -91,7 +90,7 @@ export default function Track(props:any) {
                         dispatch(navigateTo(track));
                       }}
                       component="img"
-                      height="175"
+                      height="140"
                       image={image}
                       alt={title}
                     /> : null }
@@ -107,26 +106,16 @@ export default function Track(props:any) {
         </Collapse>
 
         <CardActions>
-          <IconButton 
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(navigateTo(track));
-              }}>
-              <Icon icon="meta" />
-            </IconButton>
+          <IconButton
+            color="primary"
+            onClick={(e) => {
+              e.preventDefault();
+              // dispatch(share(track));
+            }}>
+            <Icon icon="share" />
+          </IconButton>
+        </CardActions>
 
-            <IconButton
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                // dispatch(share(track));
-              }}>
-              <Icon icon="share" />
-            </IconButton>
-          </CardActions>
-
-        
       </Card>
     </Box>
   );

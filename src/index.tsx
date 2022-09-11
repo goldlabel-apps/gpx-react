@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { featuresStore } from './features/featuresStore';
-import { 
-  Grid,
+import {
   Container,
   createTheme, 
   ThemeProvider,
@@ -30,15 +29,13 @@ root.render(
       <Provider store={ featuresStore }>
         <ThemeProvider theme={createTheme(theme())}>
           <CssBaseline />
-          <Container maxWidth="sm">
+          <Container maxWidth="md">
             <Shared />
-            <Grid container>
               <Switch>
                 <Route 
                   path="**" 
                   render={({ history }) => <GPXReact /> } />
               </Switch>
-            </Grid>
           </Container>
         </ThemeProvider>
       </Provider>

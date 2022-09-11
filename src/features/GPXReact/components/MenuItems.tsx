@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+    Divider,
   Typography,
   MenuItem,
   ListItemIcon,
@@ -19,28 +20,56 @@ export default function MenuItems() {
     return (
         <React.Fragment>
 
-            <MenuItem sx={{width: 200}} onClick={() => {
+            <MenuItem sx={{width: 200}} onClick={() =>{            
                 window.open("/", "_self")
                 handleMenuClose()
-            }}>
+                }}>
                 <ListItemIcon>
-                    <Icon icon="home" color="primary" />
+                    <Icon icon="refresh" color="primary"/>
                 </ListItemIcon>
                 <ListItemText>
                     <Typography variant="body2">
-                        Home
+                        Reset
                     </Typography>
                 </ListItemText>
             </MenuItem>
 
-
-
-            { !isProd ? <MenuItem sx={{width: 200}} onClick={() =>{
-                window.open("https://gpx-react.web.app/", "_blank")
-                // handleMenuClose()
+            <MenuItem sx={{width: 200}} onClick={() => {
+                window.open("/diving", "_self")
+                handleMenuClose()
             }}>
                 <ListItemIcon>
-                    <Icon icon="site" color="primary" />
+                    <Icon icon="dive" color="primary" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="body2">
+                        Diving
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+
+            <MenuItem sx={{width: 200}} onClick={() => {
+                window.open("/spearfishing", "_self")
+                handleMenuClose()
+            }}>
+                <ListItemIcon>
+                    <Icon icon="spearo" color="primary" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="body2">
+                        Spearfishing
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+
+            <Divider />
+
+            { !isProd ? <MenuItem sx={{width: 200}} onClick={() =>{
+                window.open("https://gpx-react.web.app", "_blank")
+                handleMenuClose()
+            }}>
+                <ListItemIcon>
+                    <Icon icon="link" color="primary" />
                 </ListItemIcon>
                 <ListItemText>
                     <Typography variant="body2">
@@ -63,19 +92,7 @@ export default function MenuItems() {
                 </ListItemText>
             </MenuItem>
 
-            <MenuItem sx={{width: 200}} onClick={() =>{            
-                window.open("/", "_self")
-                handleMenuClose()
-                }}>
-            <ListItemIcon>
-                <Icon icon="refresh" color="primary"/>
-            </ListItemIcon>
-            <ListItemText>
-                <Typography variant="body2">
-                    Reset
-                </Typography>
-            </ListItemText>
-            </MenuItem>    
+                
         </React.Fragment>
     );
 }

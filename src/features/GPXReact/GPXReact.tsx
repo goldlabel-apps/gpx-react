@@ -54,7 +54,7 @@ export default function GPXReact() {
 
   return (<React.Fragment>
             <Topbar />
-              <GPXMap track={track} />
+              <GPXMap track={track} setMode={"single"} />
             <Bottombar />
           </React.Fragment>);
 };

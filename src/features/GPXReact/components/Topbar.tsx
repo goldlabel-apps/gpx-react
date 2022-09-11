@@ -13,6 +13,9 @@ import {
   MenuItems,
   GPXIcon,
 } from "../../GPXReact";
+import {
+  Icon,
+} from "../../Shared";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -107,14 +110,40 @@ export default function Topbar() {
               color="inherit"
             >
               <Badge badgeContent={0} color="secondary">
-                <GPXIcon icon="home" />
+                <Icon icon="menu"/>
               </Badge>
             </IconButton>
+
+            <IconButton
+              aria-label="user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={()=>{}}
+              color="inherit"
+            >
+              <Badge badgeContent={0} color="secondary">
+                <Icon icon="dive" />
+              </Badge>
+            </IconButton>
+
+            <IconButton
+              aria-label="user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={()=>{}}
+              color="inherit"
+            >
+              <Badge badgeContent={0} color="secondary">
+                <Icon icon="spearo" />
+              </Badge>
+            </IconButton>
+
+
           </Box>
 
           <Search>
             <SearchIconWrapper>
-              <GPXIcon icon="search" />
+              <Icon icon="search" />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Tracks"
