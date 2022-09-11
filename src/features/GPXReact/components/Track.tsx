@@ -3,6 +3,7 @@ import {
   // useFeatureSelect,
   useFeatureDispatch,
 } from "../../Shared/store/hooks";
+import { Link } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import {
@@ -18,10 +19,6 @@ import {
   Icon,
   navigateTo,
 } from "../../Shared";
-import {
-  // next,
-  share,
-} from "../../GPXReact";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -42,21 +39,17 @@ export default function Track(props:any) {
 
   const dispatch = useFeatureDispatch();
   const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
+  const handleExpandClick = () => setExpanded(!expanded);
   const {track} = props;
   if (!track) return null;
 
   const {
-    uid,
     title,
     subheader,
     image,
     icon,
     body,
+    path,
   } = track;
 
   let hasImage = false;
@@ -66,6 +59,7 @@ export default function Track(props:any) {
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
         <CardHeader
+
           avatar={<IconButton
                     onClick={() => {
                       dispatch(navigateTo(track));
@@ -83,7 +77,9 @@ export default function Track(props:any) {
                       <Icon icon="acc" color="secondary" />
                     </ExpandMore>
                     </React.Fragment>}
-                  title={title}
+          title={<Link to={path} style={{textDecoration: "none", color: "#222",}}>
+                  {title}
+                </Link>}
           subheader={subheader}
         />
 
@@ -103,14 +99,7 @@ export default function Track(props:any) {
         
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <IconButton
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(share(track));
-              }}>
-              <Icon icon="share" />
-            </IconButton>
+            
             <Typography variant="body2">
               {body}
             </Typography>
@@ -132,4 +121,14 @@ export default function Track(props:any) {
               }}>
               <Icon icon="meta" />
             </IconButton>
+
+            <IconButton
+              color="primary"
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(share(track));
+              }}>
+              <Icon icon="share" />
+            </IconButton>
+
 */

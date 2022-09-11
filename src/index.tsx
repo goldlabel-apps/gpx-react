@@ -34,7 +34,9 @@ root.render(
             <Shared />
             <Grid container>
               <Switch>
-                <Route exact path="/" render={({ history }) => (<GPXReact /> )} />
+                <Route 
+                  path="**" 
+                  render={({ history }) => <GPXReact /> } />
               </Switch>
             </Grid>
           </Container>

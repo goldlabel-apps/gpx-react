@@ -3,6 +3,7 @@ import {
   useFeatureSelect,
   // useFeatureDispatch,
 } from "../Shared/store/hooks";
+import {useLocation} from "react-router-dom";
 import {
   selectGPXReact,
 } from "../GPXReact";
@@ -19,6 +20,10 @@ export default function GPXReact() {
 
   const gpxReact = useFeatureSelect( selectGPXReact );
   const {tracks} = gpxReact.gpxData;
+  const location = useLocation();
+  const {pathname} = location
+  console.log ("pathname", pathname)
+  
   return (
     <React.Fragment>
       <Topbar />
