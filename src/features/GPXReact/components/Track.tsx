@@ -7,6 +7,7 @@ import { styled } from '@mui/material/styles';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import {
   Box,
+  Button,
   Card,
   CardActions,
   CardHeader,
@@ -106,14 +107,17 @@ export default function Track(props:any) {
         </Collapse>
 
         <CardActions>
-          <IconButton
+          <Box sx={{flexGrow:1}}/>
+          <Button
             color="primary"
+            variant="text"
             onClick={(e) => {
               e.preventDefault();
-              // dispatch(share(track));
+              dispatch(navigateTo(track));
             }}>
-            <Icon icon="share" />
-          </IconButton>
+            <span style={{ marginLeft: 8, marginRight: 8,}}>More</span>
+            <Icon icon="right" /> 
+          </Button>
         </CardActions>
 
       </Card>

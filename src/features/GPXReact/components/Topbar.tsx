@@ -11,7 +11,7 @@ import {
 } from "@mui/material"
 import {
   MenuItems,
-  GPXIcon,
+  // GPXIcon,
 } from "../../GPXReact";
 import {
   Icon,
@@ -109,19 +109,21 @@ export default function Topbar() {
               onClick={handleMenuOpen}
               color="inherit"
             >
-              <Badge badgeContent={0} color="secondary">
+              <Badge badgeContent={3}>
                 <Icon icon="menu"/>
               </Badge>
             </IconButton>
 
             <IconButton
-              aria-label="user"
+              aria-label="diving"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={()=>{}}
+              onClick={()=>{
+                window.open("/diving", "_self");
+              }}
               color="inherit"
             >
-              <Badge badgeContent={0} color="secondary">
+              <Badge badgeContent={2}>
                 <Icon icon="dive" />
               </Badge>
             </IconButton>
@@ -130,17 +132,19 @@ export default function Topbar() {
               aria-label="user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={()=>{}}
+              onClick={()=>{
+                window.open("/spearfishing", "_self");
+              }}
               color="inherit"
             >
-              <Badge badgeContent={0} color="secondary">
+              <Badge badgeContent={1}>
                 <Icon icon="spearo" />
               </Badge>
             </IconButton>
 
 
           </Box>
-
+          <Box sx={{flexGrow:1}}/>
           <Search>
             <SearchIconWrapper>
               <Icon icon="search" />

@@ -66,7 +66,7 @@ export default function GPXMap(props:any) {
                       window.open("/", "_self");
                     }}
                   >
-                    <Icon icon={"home"} color="primary" />
+                    <Icon icon={"left"} color="primary" />
                   </IconButton> : null }
 
                   <IconButton
@@ -78,6 +78,7 @@ export default function GPXMap(props:any) {
                     <Icon icon={icon} color="primary" />
                   </IconButton>
                 </React.Fragment>}
+
           action={ mode !== "single" ? <React.Fragment>
                     <ExpandMore
                       expand={expanded}
@@ -111,14 +112,7 @@ export default function GPXMap(props:any) {
             </Typography>
           </CardContent>
           <CardActions>
-            <IconButton
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                // dispatch(share(track));
-              }}>
-              <Icon icon="share" />
-            </IconButton>
+            
           </CardActions>
       </Card>
     </Box>

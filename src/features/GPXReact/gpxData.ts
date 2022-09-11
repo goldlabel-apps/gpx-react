@@ -12,7 +12,7 @@ const gpxData = {
         icon: "spearo",
         embed:"",
         image: "/jpg/Spearfishing/Spearfishing_800.jpg",
-        body: "Maltese Islands Diving Guide publishished in paperback in 1997 by Ned Middleton",
+        body: "",
         links: [
           {
             label: "Google Map",

@@ -42,7 +42,7 @@ export default function GPXReact() {
               return (<Grid 
                         key={`track_${i}`}
                         item xs={12} sm={6}>
-                        <Track track={item.value}/>
+                        <Track track={item.value} setMode={"list"}/>
                       </Grid>)
             })}
             </React.Fragment>}
