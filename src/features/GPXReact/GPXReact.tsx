@@ -14,6 +14,7 @@ import {
   Track,
   Bottombar,
   Topbar,
+  GPXMap,
 } from "../GPXReact";
 
 export default function GPXReact() {
@@ -22,26 +23,41 @@ export default function GPXReact() {
   const {tracks} = gpxReact.gpxData;
   const location = useLocation();
   const {pathname} = location
-  console.log ("pathname", pathname)
   
-  return (
-    <React.Fragment>
-      <Topbar />
-      <Grid container>
-        { !tracks.length ? null : <React.Fragment>
-          { tracks.map((item: any, i: number) => {
-            return (<Grid 
-                      key={`track_${i}`}
-                      item xs={12} sm={6}>
-                      <Track track={item.value}/>
-                    </Grid>)
-          })}
-          </React.Fragment>}
-      </Grid>
-      <Bottombar />
-    </React.Fragment>
-  )
+  let track = null;
+  let trackPath = pathname;
+  for(let i =0; i < tracks.length; i++){
+    if (trackPath === tracks[i].value.path){
+      track = tracks[i];
+      break;
+    }
+  }
+  if(pathname === "/"){
+    return (
+      <React.Fragment>
+        <Topbar />
+        <Grid container>
+          { !tracks.length ? null : <React.Fragment>
+            { tracks.map((item: any, i: number) => {
+              return (<Grid 
+                        key={`track_${i}`}
+                        item xs={12} sm={6}>
+                        <Track track={item.value}/>
+                      </Grid>)
+            })}
+            </React.Fragment>}
+        </Grid>
+        <Bottombar />
+      </React.Fragment>
+    )
+  }
+
+  return (<React.Fragment>
+            <Topbar />
+              <GPXMap track={track} />
+            <Bottombar />
+          </React.Fragment>);
 };
 /*
-<pre>{JSON.stringify(item, null, 2)}</pre>
+  <pre>{JSON.stringify(item, null, 2)}</pre>
 */

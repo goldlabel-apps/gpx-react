@@ -2,24 +2,22 @@ import * as React from 'react';
 import {
   // useFeatureSelect,
   useFeatureDispatch,
-} from "../../Shared/store/hooks";
-import { Link } from "react-router-dom";
+} from "../../../Shared/store/hooks";
 import { styled } from '@mui/material/styles';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import {
   Box,
   Card,
-  CardActions,
   CardHeader,
+  CardActions,
   CardMedia,
   CardContent,
-  Collapse,
   Typography
 } from "@mui/material"
 import {
   Icon,
   navigateTo,
-} from "../../Shared";
+} from "../../../Shared";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -36,7 +34,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export default function Track(props:any) {
+export default function GPXMap(props:any) {
 
   const dispatch = useFeatureDispatch();
   const [expanded, setExpanded] = React.useState(false);
@@ -50,9 +48,7 @@ export default function Track(props:any) {
     image,
     icon,
     body,
-    path,
-  } = track;
-
+  } = track.value;
   let hasImage = false;
   if(image && image !== "") hasImage = true;
   
@@ -77,9 +73,7 @@ export default function Track(props:any) {
                       <Icon icon="acc" color="secondary" />
                     </ExpandMore>
                     </React.Fragment>}
-          title={<Link to={path} style={{textDecoration: "none", color: "#222",}}>
-                  {title}
-                </Link>}
+          title={ title }
           subheader={subheader}
         />
 
@@ -96,17 +90,12 @@ export default function Track(props:any) {
                       alt={title}
                     /> : null }
         
-        
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            
             <Typography variant="body2">
               {body}
             </Typography>
           </CardContent>
-        </Collapse>
-
-        <CardActions>
+          <CardActions>
           <IconButton 
               color="primary"
               onClick={(e) => {
@@ -125,7 +114,6 @@ export default function Track(props:any) {
               <Icon icon="share" />
             </IconButton>
           </CardActions>
-
         
       </Card>
     </Box>
@@ -133,22 +121,4 @@ export default function Track(props:any) {
 }
 
 /*
-<IconButton 
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(navigateTo(track));
-              }}>
-              <Icon icon="meta" />
-            </IconButton>
-
-            <IconButton
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(share(track));
-              }}>
-              <Icon icon="share" />
-            </IconButton>
-
 */

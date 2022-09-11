@@ -2,6 +2,7 @@ const gpxData = {
   tracks: [
     { 
       label: "Spearfishing",
+      trackType: "map",
       value: {
         type: "googleMap",
         uid: "GM_0000000001",
@@ -22,6 +23,7 @@ const gpxData = {
     },
     { 
       label: "Diving",
+      trackType: "map",
       value: {
         type: "post",
         uid: "P_0000000021",
@@ -36,6 +38,7 @@ const gpxData = {
   
     { 
       label: "Rozi",
+      trackType: "map",
       value: {
         uid: "D_0000000002",
         title: "Rozi Wreck",
@@ -51,6 +54,7 @@ const gpxData = {
     },
     {
       label: "Anchor Bay",
+      trackType: "map",
       value: {
         uid: "D_0003000002",
         title: "Anchor Bay",
