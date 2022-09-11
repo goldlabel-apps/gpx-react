@@ -66,47 +66,35 @@ export default function Track(props:any) {
   return (
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
+      
         <CardHeader
           avatar={<IconButton>
                     <Icon icon={icon} color="primary" />
                   </IconButton>}
           action={<React.Fragment>
-            
-            <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <Icon icon="acc" color="secondary" />
-            </ExpandMore>
-
-
-            </React.Fragment>}
-          title={title}
+                    <ExpandMore
+                      expand={expanded}
+                      onClick={handleExpandClick}
+                      aria-expanded={expanded}
+                      aria-label="show more"
+                    >
+                      <Icon icon="acc" color="secondary" />
+                    </ExpandMore>
+                    </React.Fragment>}
+                  title={title}
           subheader={subheader}
         />
-        
-        
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
 
-          {hasImage && expanded ? <CardMedia
+        {hasImage ? <CardMedia
                       component="img"
                       height="200"
                       image={image}
                       alt={title}
                     /> : null }
-
-            <IconButton 
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(navigateTo(track));
-              }}>
-              <Icon icon="meta" />
-            </IconButton>
-
+        
+        
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
             <IconButton
               color="primary"
               onClick={(e) => {
@@ -130,4 +118,12 @@ export default function Track(props:any) {
 }
 
 /*
+<IconButton 
+              color="primary"
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(navigateTo(track));
+              }}>
+              <Icon icon="meta" />
+            </IconButton>
 */

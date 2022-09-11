@@ -1,6 +1,8 @@
 import GPXReact from "./GPXReact";
 import Track from "./components/Track";
 import Bottombar from "./components/Bottombar";
+import GPXIcon from "./components/GPXIcon";
+import MenuItems from "./components/MenuItems";
 import Topbar from "./components/Topbar";
 import {selectGPXReact} from "./store/slice";
 import {next} from "./store/actions/next";
@@ -10,7 +12,9 @@ export {
   GPXReact,
   Track,
   Bottombar,
+  GPXIcon,
   Topbar,
+  MenuItems,
   selectGPXReact,
   next,
   share,

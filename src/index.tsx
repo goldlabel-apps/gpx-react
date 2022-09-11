@@ -30,7 +30,7 @@ root.render(
       <Provider store={ featuresStore }>
         <ThemeProvider theme={createTheme(theme())}>
           <CssBaseline />
-          <Container>
+          <Container maxWidth="sm">
             <Shared />
             <Grid container>
               <Switch>

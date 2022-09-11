@@ -1,16 +1,18 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  InputBase,
+  Badge,
+  MenuItem,
+  Menu,
+} from "@mui/material"
 import {Icon} from "../../Shared";
+import {MenuItems} from "../../GPXReact";
 
 import {
   ListItemIcon,
@@ -25,7 +27,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginRight: theme.spacing(2),
-  marginLeft: 0,
+  marginLeft: -1,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
@@ -98,49 +100,7 @@ export default function Topbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem sx={{width: 200}} onClick={() =>{
-        window.open("https://gpx-react.web.app/", "_blank")
-        handleMenuClose()
-      }}>
-        <ListItemIcon>
-          <Icon icon="site" color="primary" />
-        </ListItemIcon>
-        <ListItemText>
-          <Typography variant="body2">
-            Prod
-          </Typography>
-        </ListItemText>
-      </MenuItem>
-      
-      <MenuItem sx={{width: 200}} onClick={() =>{
-        window.open("https://github.com/listingslab-software/gpx-react", "_blank")
-        handleMenuClose()
-      }}>
-        <ListItemIcon>
-          <Icon icon="github" color="primary" />
-        </ListItemIcon>
-        <ListItemText>
-          <Typography variant="body2">
-            Git
-          </Typography>
-        </ListItemText>
-      </MenuItem>
-
-      <MenuItem sx={{width: 200}} onClick={() =>{            
-            window.open("/", "_self")
-            handleMenuClose()
-          }}>
-        <ListItemIcon>
-          <Icon icon="refresh" color="primary"/>
-        </ListItemIcon>
-        <ListItemText>
-          <Typography variant="body2">
-            Reset
-          </Typography>
-        </ListItemText>
-      </MenuItem>
-
-
+      <MenuItems />
     </Menu>
   );
 
@@ -161,50 +121,7 @@ export default function Topbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      
-      
-      <MenuItem sx={{width: 200}} onClick={() =>{
-        window.open("https://gpx-react.web.app/", "_blank")
-        handleMenuClose()
-      }}>
-        <ListItemIcon>
-          <Icon icon="site" color="primary" />
-        </ListItemIcon>
-        <ListItemText>
-          <Typography variant="body2">
-            Prod
-          </Typography>
-        </ListItemText>
-      </MenuItem>
-      
-      <MenuItem sx={{width: 200}} onClick={() =>{
-        window.open("https://github.com/listingslab-software/gpx-react", "_blank")
-        handleMenuClose()
-      }}>
-        <ListItemIcon>
-          <Icon icon="github" color="primary" />
-        </ListItemIcon>
-        <ListItemText>
-          <Typography variant="body2">
-            Git
-          </Typography>
-        </ListItemText>
-      </MenuItem>
-
-      <MenuItem sx={{width: 200}} onClick={() =>{            
-            window.open("/", "_self")
-            handleMenuClose()
-          }}>
-        <ListItemIcon>
-          <Icon icon="refresh" color="primary"/>
-        </ListItemIcon>
-        <ListItemText>
-          <Typography variant="body2">
-            Reset
-          </Typography>
-        </ListItemText>
-      </MenuItem>
-
+      <MenuItems />
     </Menu>
   );
 
@@ -218,32 +135,7 @@ export default function Topbar() {
         }}>
         <Toolbar>
           
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ 
-              display: { xs: 'none', sm: 'block' },
-              ml:-2,
-            }}>
-            Maltese Islands Diving Guide
-          </Typography>
-          
-          <Box sx={{ flexGrow: 1 }} />
-
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Tracks"
-              inputProps={{ 
-                'aria-label': 'search',
-              }}
-            />
-          </Search>
-
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'none' } }}>
             <IconButton
               edge="end"
               aria-label="user"
@@ -253,12 +145,15 @@ export default function Topbar() {
               color="inherit"
             >
               <Badge badgeContent={0} color="secondary">
-                <Icon icon="menu" />
+                <Icon icon="gpx" />
               </Badge>
             </IconButton>
           </Box>
 
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ 
+            display: { xs: 'flex', md: 'none' },
+            ml: -3,
+          }}>
             <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}
@@ -269,6 +164,18 @@ export default function Topbar() {
               <Icon icon="menu" />
             </IconButton>
           </Box>
+
+          <Search>
+            <SearchIconWrapper>
+              <Icon icon="filter" />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Tracks"
+              inputProps={{ 
+                'aria-label': 'search',
+              }}
+            />
+          </Search>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
@@ -276,3 +183,15 @@ export default function Topbar() {
     </React.Fragment>
   );
 }
+/*
+<Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ 
+              display: { xs: 'none', sm: 'block' },
+              ml:-2,
+            }}>
+            Maltese Islands Diving Guide
+          </Typography>
+*/

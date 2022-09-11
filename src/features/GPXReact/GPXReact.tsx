@@ -16,12 +16,9 @@ import {
 } from "../GPXReact";
 
 export default function GPXReact() {
-  
-  // const [ valid, setValid] = React.useState<boolean>( false )
-  // const dispatch = useFeatureDispatch()
+
   const gpxReact = useFeatureSelect( selectGPXReact );
   const {tracks} = gpxReact.gpxData;
-  // console.log("tracks", tracks);
   return (
     <React.Fragment>
       <Topbar />
@@ -30,7 +27,7 @@ export default function GPXReact() {
           { tracks.map((item: any, i: number) => {
             return (<Grid 
                       key={`track_${i}`}
-                      item xs={12} sm={6} md={4} lg={3}>
+                      item xs={12} sm={6}>
                       <Track track={item.value}/>
                     </Grid>)
           })}

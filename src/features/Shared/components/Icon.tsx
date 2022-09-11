@@ -5,6 +5,7 @@ import * as React from "react"
 import DefaultIcon from "@mui/icons-material/DisabledByDefault"
 import HomeIcon from "@mui/icons-material/Home"
 import SitesIcon from "@mui/icons-material/Language"
+import SpearoIcon from "@mui/icons-material/Pool"
 import InitIcon from "@mui/icons-material/NotStarted"
 import TextIcon from "@mui/icons-material/TextFields"
 import AddDocIcon from "@mui/icons-material/PostAdd"
@@ -123,6 +124,11 @@ export default function Icon(props: any) {
       case "save":
         iconFragment = <SaveIcon color={color} />
         break
+
+        case "spearo":
+          iconFragment = <SpearoIcon color={color} />
+          break
+        
 
         case "more":
           iconFragment = <MoreIcon color={color} />
