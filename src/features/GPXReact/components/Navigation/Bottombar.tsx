@@ -30,7 +30,7 @@ export default function Bottombar() {
           boxShadow: "none",  
         }}>
         <Toolbar>
-          <Tooltip title="Add Content">
+          <Tooltip title="New Track">
             <StyledFab color="primary"
             onClick={(e: React.MouseEvent) => {
               e.preventDefault();

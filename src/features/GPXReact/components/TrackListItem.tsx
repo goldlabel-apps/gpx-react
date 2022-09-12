@@ -8,7 +8,7 @@ import {
   Box,
   ButtonBase,
   Card,
-  CardActions,
+  Tooltip,
   CardHeader,
   CardMedia,
   CardContent,
@@ -45,6 +45,7 @@ export default function TrackListItem(props:any) {
 
   const {
     title,
+    category,
     subheader,
     image,
     icon,
@@ -58,22 +59,32 @@ export default function TrackListItem(props:any) {
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
         <CardHeader
-          avatar={<IconButton
-                    color="secondary"
-                    onClick={(e: React.MouseEvent) => {
-                      e.preventDefault();
-                      console.log("navigateToCategory(category)");
-                      // dispatch(navigateToCategory("category"));
-                    }}>
-                    <Icon icon={icon}  />
-                  </IconButton>}
-          action={<IconButton
-                    color="secondary"
-                    onClick={() => {
-                      dispatch(navigateTo(track));
-                    }}>
-                    <Icon icon="right"  />
-                  </IconButton>}
+          avatar={<React.Fragment>
+                  <Tooltip title={category}>
+                    <IconButton
+                      color="primary"
+                      onClick={(e: React.MouseEvent) => {
+                        e.preventDefault();
+                        console.log("navigateToCategory(category)");
+                        //dispatch(navigateToCategory("category"));
+                      }}>
+                      <Icon icon={icon}  />
+                    </IconButton>
+                  </Tooltip>
+
+                    
+                      <ExpandMore
+                        expand={expanded}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more">
+                        <Icon icon="acc" color="primary" />
+                      </ExpandMore>
+
+
+                  
+                    
+                  </React.Fragment>}
           title={<ButtonBase 
                   sx={{
                     width: "100%",
@@ -90,7 +101,7 @@ export default function TrackListItem(props:any) {
                 </ButtonBase>}
           subheader={subheader}
         />
-
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
         {hasImage ? <CardMedia
                       sx={{ 
                         cursor: "pointer", 
@@ -103,8 +114,6 @@ export default function TrackListItem(props:any) {
                       image={image}
                       alt={title}
                     /> : null }
-                      
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography variant="body2">
               {body}
@@ -112,18 +121,6 @@ export default function TrackListItem(props:any) {
           </CardContent>
         </Collapse>
 
-        <CardActions>
-          <Box sx={{flexGrow:1}}/>
-          <React.Fragment>
-            <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more">
-              <Icon icon="acc" color="secondary" />
-            </ExpandMore>
-          </React.Fragment>
-        </CardActions>
       </Card>
     </Box>
   );

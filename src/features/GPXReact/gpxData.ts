@@ -1,6 +1,4 @@
 const gpxData = {
-  categories:[],
-  tags:[],
   tracks: [
     { 
       label: "Maltese Islands Diving Guide",
@@ -8,6 +6,7 @@ const gpxData = {
       value: {
         type: "post",
         uid: "P_0000000021",
+        category: "diving",
         title: "Malta Diving Guide",
         excerpt: "Shore or boat",
         path: "/diving",
@@ -22,6 +21,7 @@ const gpxData = {
       value: {
         uid: "D_6600000002",
         title: "Rozi Wreck",
+        category: "diving",
         excerpt: "Valetta tugboat",
         icon: "dive",
         path: "/diving/wrecks/rozi",
@@ -34,9 +34,9 @@ const gpxData = {
     },
     { 
       label: "Spearfishing",
-      trackType: "map",
       value: {
         type: "googleMap",
+        category: "category",
         uid: "GM_0000000001",
         title: "Spearfishing",
         excerpt: "With no boat",
@@ -55,9 +55,9 @@ const gpxData = {
     },
     {
       label: "Anchor Bay",
-      trackType: "map",
       value: {
         uid: "D_0003000002",
+        category: "diving",
         title: "Anchor Bay",
         excerpt: "Cave dive",
         icon: "dive",
@@ -71,7 +71,6 @@ const gpxData = {
     },
     { 
       label: "Decathlon",
-      trackType: "shopping",
       value: {
         type: "shopping",
         uid: "SH_0000000001",
@@ -79,7 +78,7 @@ const gpxData = {
         excerpt: "With no boat",
         path: "/shopping/decathlon",
         icon: "shopping",
-        embed:"",
+        category: "shopping",
         image: "/jpg/Decathlon/Decathlon.jpg",
         body: "TO SUSTAINABLY WE MAKE THE PLEASURE AND BENEFITS OF SPORT ACCESSIBLE TO THE MANY",
         links: [

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {
   useFeatureSelect,
-  // useFeatureDispatch,
 } from "../Shared/store/hooks";
 import {useLocation} from "react-router-dom";
 import {
   selectGPXReact,
+  GPXMap,
 } from "../GPXReact";
 import {
   Grid,
@@ -37,15 +37,26 @@ export default function GPXReact() {
       <React.Fragment>
         <Topbar />
         <Grid container sx={{mb:10}}>
-          { !tracks.length ? null : <React.Fragment>
-            { tracks.map((item: any, i: number) => {
-              return (<Grid 
-                        key={`track_${i}`}
-                        item xs={12} sm={6} md={4}>
-                        <TrackListItem track={item.value} setMode={"list"}/>
-                      </Grid>)
-            })}
-            </React.Fragment>}
+          <Grid item xs={4}>
+            <Grid container>
+              { !tracks.length ? null : <React.Fragment>
+              { tracks.map((item: any, i: number) => {
+                return (<Grid 
+                          key={`track_${i}`}
+                          item xs={12}>
+                          <TrackListItem track={item.value} setMode={"list"}/>
+                        </Grid>)
+              })}
+              </React.Fragment>}
+            </Grid>
+
+            
+          </Grid>
+
+          <Grid item xs={8}>
+              <GPXMap />
+          </Grid>
+          
         </Grid>
         <Bottombar />
       </React.Fragment>
@@ -54,7 +65,26 @@ export default function GPXReact() {
 
   return (<React.Fragment>
             <Topbar />
-              <Generic track={track} setMode={"single"} />
+
+            <Grid container sx={{mb:10}}>
+              <Grid item xs={4}>
+                <Grid container>
+                { !tracks.length ? null : <React.Fragment>
+                  { tracks.map((item: any, i: number) => {
+                            return (<Grid 
+                                      key={`track_${i}`}
+                                      item xs={12}>
+                                      <TrackListItem track={item.value} setMode={"list"}/>
+                                    </Grid>)
+                          })}
+                          </React.Fragment>}
+                </Grid>
+              </Grid>
+              <Grid item xs={8}>
+                <Generic track={track} setMode={"single"} />
+              </Grid>
+            </Grid>
+              
             <Bottombar />
           </React.Fragment>);
 };

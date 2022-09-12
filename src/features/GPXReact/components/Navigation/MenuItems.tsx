@@ -20,6 +20,26 @@ export default function MenuItems() {
     return (
         <React.Fragment>
 
+            { !isProd ? <React.Fragment>
+                
+                <MenuItem sx={{width: 200}} onClick={() =>{
+                    window.open("https://gpx-react.web.app", "_blank")
+                    handleMenuClose()
+                }}>
+                    <ListItemIcon>
+                        <Icon icon="link" color="primary" />
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography variant="body2">
+                            PROD
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>
+                <Divider />
+            </React.Fragment> : null }
+
+
+
             <MenuItem sx={{width: 200}} onClick={() =>{            
                 window.open("/", "_self")
                 handleMenuClose()
@@ -35,11 +55,6 @@ export default function MenuItems() {
             </MenuItem>
 
             
-
-            <Divider />
-
-            
-            
             <MenuItem sx={{width: 200}} onClick={() => {
                 window.open("https://github.com/listingslab-software/gpx-react", "_blank")
                 handleMenuClose()
@@ -54,19 +69,7 @@ export default function MenuItems() {
                 </ListItemText>
             </MenuItem>
 
-            { !isProd ? <MenuItem sx={{width: 200}} onClick={() =>{
-                window.open("https://gpx-react.web.app", "_blank")
-                handleMenuClose()
-            }}>
-                <ListItemIcon>
-                    <Icon icon="link" color="primary" />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="body2">
-                        PROD
-                    </Typography>
-                </ListItemText>
-            </MenuItem> : null }
+            
 
 
 
