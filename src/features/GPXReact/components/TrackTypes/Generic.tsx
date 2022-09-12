@@ -34,7 +34,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export default function GPXMap(props:any) {
+export default function Generic(props:any) {
 
   const dispatch = useFeatureDispatch();
   const [expanded, setExpanded] = React.useState(false);

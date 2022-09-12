@@ -12,7 +12,7 @@ import {
 import { 
   Shared,
 } from "./features/Shared";
-import {theme} from "./features/GPXReact/utils/theme";
+import {theme} from "./features/GPXReact/theme/theme";
 import {GPXReact} from "./features/GPXReact";
 
 console.warn(`${process.env.REACT_APP_NAME} ${process.env.REACT_APP_VERSION} ${process.env.REACT_APP_ENV}`);
@@ -29,7 +29,7 @@ root.render(
       <Provider store={ featuresStore }>
         <ThemeProvider theme={createTheme(theme())}>
           <CssBaseline />
-          <Container maxWidth="md">
+          <Container maxWidth="lg">
             <Shared />
               <Switch>
                 <Route 

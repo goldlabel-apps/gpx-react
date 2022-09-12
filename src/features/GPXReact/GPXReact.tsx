@@ -14,7 +14,7 @@ import {
   TrackListItem,
   Bottombar,
   Topbar,
-  GPXMap,
+  Generic,
 } from "../GPXReact";
 
 export default function GPXReact() {
@@ -41,7 +41,7 @@ export default function GPXReact() {
             { tracks.map((item: any, i: number) => {
               return (<Grid 
                         key={`track_${i}`}
-                        item xs={12} sm={6}>
+                        item xs={12} sm={6} md={4}>
                         <TrackListItem track={item.value} setMode={"list"}/>
                       </Grid>)
             })}
@@ -54,7 +54,7 @@ export default function GPXReact() {
 
   return (<React.Fragment>
             <Topbar />
-              <GPXMap track={track} setMode={"single"} />
+              <Generic track={track} setMode={"single"} />
             <Bottombar />
           </React.Fragment>);
 };

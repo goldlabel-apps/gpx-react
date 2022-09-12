@@ -10,8 +10,6 @@ export const theme = () => {
     primaryMain: "#0080bc",
     secondaryMain: "#00a4e1",
   };
-
-  
   
   const { paperBg, primaryMain, secondaryMain } = themeObj
 

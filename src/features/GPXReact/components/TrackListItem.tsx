@@ -2,11 +2,11 @@ import * as React from 'react';
 import {
   useFeatureDispatch,
 } from "../../Shared/store/hooks";
-import { Link } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import {
   Box,
+  ButtonBase,
   Card,
   CardActions,
   CardHeader,
@@ -49,7 +49,6 @@ export default function TrackListItem(props:any) {
     image,
     icon,
     body,
-    path,
   } = track;
 
   let hasImage = false;
@@ -75,9 +74,20 @@ export default function TrackListItem(props:any) {
                     }}>
                     <Icon icon="right"  />
                   </IconButton>}
-          title={<Link to={path} style={{textDecoration: "none", color: "#222",}}>
-                  {title}
-                </Link>}
+          title={<ButtonBase 
+                  sx={{
+                    width: "100%",
+                    textAlign: "left",
+                    display: "block",
+                  }}
+                  onClick={(e: React.MouseEvent)=>{
+                    e.preventDefault();
+                    dispatch(navigateTo(track));
+                  }}>
+                    <Typography variant="button">
+                      {title}
+                    </Typography>
+                </ButtonBase>}
           subheader={subheader}
         />
 
@@ -96,7 +106,6 @@ export default function TrackListItem(props:any) {
                       
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            
             <Typography variant="body2">
               {body}
             </Typography>
@@ -105,58 +114,17 @@ export default function TrackListItem(props:any) {
 
         <CardActions>
           <Box sx={{flexGrow:1}}/>
-          
           <React.Fragment>
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}
               aria-expanded={expanded}
-              aria-label="show more"
-            >
+              aria-label="show more">
               <Icon icon="acc" color="secondary" />
             </ExpandMore>
           </React.Fragment>
         </CardActions>
-
       </Card>
     </Box>
   );
 }
-
-/*
-<IconButton 
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(navigateTo(track));
-              }}>
-              <Icon icon="meta" />
-            </IconButton>
-
-            <IconButton
-              color="primary"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(share(track));
-              }}>
-              <Icon icon="share" />
-            </IconButton>
-
-
-            <Button
-            sx={{m:1}}
-            color="primary"
-            variant="text"
-            onClick={(e) => {
-              e.preventDefault();
-              dispatch(navigateTo(track));
-            }}>
-              <span style={{ marginLeft: 8, marginRight: 8,}}>
-                Read
-              </span>
-              <Icon icon="right" /> 
-          </Button>
-
-
-
-*/

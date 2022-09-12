@@ -58,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Topbar() {
 
-  const showSearch = false;
+  const showSearch = true;
   
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const isMenuOpen = Boolean(anchorEl);
@@ -149,9 +149,9 @@ export default function Topbar() {
               <Icon icon="search" />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Tracks"
+              placeholder="Search"
               inputProps={{ 
-                'aria-label': 'search',
+                'aria-label': 'Search',
               }}
             />
           </Search> : null }
@@ -163,8 +163,8 @@ export default function Topbar() {
               onClick={handleMenuOpen}
               color="inherit"
             >
-              <Badge badgeContent={2} color="primary">
-                <Icon icon="user" />
+              <Badge badgeContent={0} color="primary">
+                <Icon icon="notify" />
               </Badge>
             </IconButton>
         </Toolbar>

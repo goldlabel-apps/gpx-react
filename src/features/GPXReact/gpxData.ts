@@ -6,7 +6,7 @@ const gpxData = {
       value: {
         type: "post",
         uid: "P_0000000021",
-        title: "Maltese Islands Diving Guide",
+        title: "Malta Diving Guide",
         excerpt: "Shore or boat",
         path: "/diving",
         icon: "dive",
