@@ -160,8 +160,10 @@ export default function Topbar() {
               }}
             />
           </Search> : null }
+
           <Tooltip title="Menu">
             <IconButton
+            sx={{mr:-2}}
               aria-label="diving"
               aria-controls={menuId}
               aria-haspopup="true"
@@ -173,6 +175,7 @@ export default function Topbar() {
             </IconButton>
           </Tooltip>
         </Toolbar>
+
       </AppBar>
       {renderMenu}
     </React.Fragment>

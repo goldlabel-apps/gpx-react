@@ -1,10 +1,10 @@
 {
-  "name": "GPX",
-  "short_name": "GPX",
+  "name": "GPXReact",
+  "short_name": "GPXReact",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#fff",
-  "background_color": "#fff",
+  "theme_color": "#2c5e92",
+  "background_color": "#2c5e92",
   "icons": [
     {
       "src": "favicon.ico",
