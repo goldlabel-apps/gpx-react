@@ -12,9 +12,7 @@ import {
 import {Icon} from "../../../Shared";
 import {goTo} from "../../../GPXReact";
 
-
 export default function MenuItems() {
-
     const dispatch = useFeatureDispatch();
     const handleMenuClose = () => {
         return false;
@@ -27,12 +25,11 @@ export default function MenuItems() {
         <React.Fragment>
 
             { !isProd ? <React.Fragment>
-                
                 <MenuItem sx={{width: 200}} onClick={() =>{
                     dispatch(goTo({
                         renderAs: "external",
                         options: {
-                            url: "https://"
+                            url: "https://gpx-react.web.app"
                         }
                     }));
                     handleMenuClose();
@@ -57,7 +54,7 @@ export default function MenuItems() {
                     },
                 }));
                 handleMenuClose()
-                }}>
+            }}>
                 <ListItemIcon>
                     <Icon icon="refresh" color="primary"/>
                 </ListItemIcon>
@@ -66,14 +63,12 @@ export default function MenuItems() {
                         Reset
                     </Typography>
                 </ListItemText>
-            </MenuItem>
-
-            
+            </MenuItem>            
             <MenuItem sx={{width: 200}} onClick={() => {
                 dispatch(goTo({
                     renderAs: "external",
                     options: {
-                        url: "dkasjdjl"
+                        url: "https://github.com/listingslab-software/gpx-react"
                     }
                 }));
                 handleMenuClose()
@@ -91,32 +86,3 @@ export default function MenuItems() {
         </React.Fragment>
     );
 }
-/*
-<MenuItem sx={{width: 200}} onClick={() => {
-                window.open("/diving", "_self")
-                handleMenuClose()
-            }}>
-                <ListItemIcon>
-                    <Icon icon="dive" color="primary" />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="body2">
-                        Diving
-                    </Typography>
-                </ListItemText>
-            </MenuItem>
-
-            <MenuItem sx={{width: 200}} onClick={() => {
-                window.open("/spearfishing", "_self")
-                handleMenuClose()
-            }}>
-                <ListItemIcon>
-                    <Icon icon="spearo" color="primary" />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="body2">
-                        Spearfishing
-                    </Typography>
-                </ListItemText>
-            </MenuItem>
-*/
