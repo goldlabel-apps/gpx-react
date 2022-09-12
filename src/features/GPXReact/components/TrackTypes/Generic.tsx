@@ -49,6 +49,7 @@ export default function Generic(props:any) {
     image,
     icon,
     body,
+    bodyFormat,
   } = track.value;
   let hasImage = false;
   if(image && image !== "") hasImage = true;
@@ -101,9 +102,11 @@ export default function Generic(props:any) {
                     /> : null }
         
           <CardContent>
-            <Typography variant="body2">
+            {bodyFormat === "html" ? <Typography variant="body1">
+              {<span dangerouslySetInnerHTML={{ __html: body }}></span>}
+            </Typography> : <Typography variant="body2">
               {body}
-            </Typography>
+            </Typography> }
           </CardContent>
           <CardActions>
             

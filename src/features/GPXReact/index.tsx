@@ -1,25 +1,27 @@
 import GPXReact from "./GPXReact";
 import TrackListItem from "./components/TrackListItem";
+import Generic from "./components/TrackTypes/Generic";
+
 import GPXMap from "./components/GPXMap";
 import Bottombar from "./components/Navigation/Bottombar";
-import GPXIcon from "./theme/GPXIcon";
 import MenuItems from "./components/Navigation/MenuItems";
-import Generic from "./components/TrackTypes/Generic";
+
 import Topbar from "./components/Navigation/Topbar";
 import {selectGPXReact} from "./store/slice";
 import {next} from "./store/actions/next";
+import {goTo} from "./store/actions/goTo";
 import {share} from "./store/actions/share";
 
 export {
   GPXReact,
   TrackListItem,
+  Generic,
   Bottombar,
-  GPXIcon,
   GPXMap,
   Topbar,
   MenuItems,
   selectGPXReact,
   next,
   share,
-  Generic,
+  goTo,
 };

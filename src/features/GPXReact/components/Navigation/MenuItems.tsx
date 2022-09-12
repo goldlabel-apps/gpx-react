@@ -1,15 +1,21 @@
 import * as React from 'react';
 import {
-    Divider,
+    useFeatureDispatch,
+  } from "../../../Shared/store/hooks";
+import {
+  Divider,
   Typography,
   MenuItem,
   ListItemIcon,
   ListItemText,
 } from "@mui/material"
 import {Icon} from "../../../Shared";
+import {goTo} from "../../../GPXReact";
+
 
 export default function MenuItems() {
 
+    const dispatch = useFeatureDispatch();
     const handleMenuClose = () => {
         return false;
     }
@@ -23,8 +29,8 @@ export default function MenuItems() {
             { !isProd ? <React.Fragment>
                 
                 <MenuItem sx={{width: 200}} onClick={() =>{
-                    window.open("https://gpx-react.web.app", "_blank")
-                    handleMenuClose()
+                    dispatch(goTo({renderAs: "external"}));
+                    handleMenuClose();
                 }}>
                     <ListItemIcon>
                         <Icon icon="link" color="primary" />
@@ -41,7 +47,7 @@ export default function MenuItems() {
 
 
             <MenuItem sx={{width: 200}} onClick={() =>{            
-                window.open("/", "_self")
+                dispatch(goTo({renderAs: "internal"}));
                 handleMenuClose()
                 }}>
                 <ListItemIcon>
@@ -56,7 +62,7 @@ export default function MenuItems() {
 
             
             <MenuItem sx={{width: 200}} onClick={() => {
-                window.open("https://github.com/listingslab-software/gpx-react", "_blank")
+                dispatch(goTo({}));
                 handleMenuClose()
             }}>
                 <ListItemIcon>
@@ -69,11 +75,6 @@ export default function MenuItems() {
                 </ListItemText>
             </MenuItem>
 
-            
-
-
-
-                
         </React.Fragment>
     );
 }

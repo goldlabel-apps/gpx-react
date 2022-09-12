@@ -163,7 +163,7 @@ export default function Topbar() {
 
           <Tooltip title="Menu">
             <IconButton
-            sx={{mr:-2}}
+              sx={{mr:-3}}
               aria-label="diving"
               aria-controls={menuId}
               aria-haspopup="true"

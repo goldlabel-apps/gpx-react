@@ -62,11 +62,8 @@ export default function GPXReact() {
   return (<React.Fragment>
             <Topbar />
             <Grid container sx={{mb:10}}>
-              <Grid item xs={12} md={8}>
-                <Generic track={track} setMode={"single"} />
-              </Grid>
               <Grid item xs={12} md={4}>
-                <Grid container>
+                <Grid container sx={{mt:0.5}}>
                 { !tracks.length ? null : <React.Fragment>
                   { tracks.map((item: any, i: number) => {
                             return (<Grid 
@@ -78,9 +75,10 @@ export default function GPXReact() {
                           </React.Fragment>}
                 </Grid>
               </Grid>
-              
+              <Grid item xs={12} md={8}>
+                <Generic track={track} setMode={"single"} />
+              </Grid>
             </Grid>
-              
             <Bottombar />
           </React.Fragment>);
 };

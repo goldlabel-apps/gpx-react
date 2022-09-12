@@ -19,7 +19,9 @@ import {
   Icon,
   navigateTo,
 } from "../../Shared";
-
+import {
+  goTo,
+} from "../../GPXReact";
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
@@ -49,42 +51,41 @@ export default function TrackListItem(props:any) {
     subheader,
     image,
     icon,
-    body,
+    excerpt,
   } = track;
 
   let hasImage = false;
   if(image && image !== "") hasImage = true;
   
   return (
-    <Box sx={{m:1}}>
+    <Box sx={{m:0.5}}>
       <Card sx={{ width: "100%" }}>
         <CardHeader
-          action={<React.Fragment>
-                  <Tooltip title={category}>
-                    <IconButton
-                      color="primary"
-                      onClick={(e: React.MouseEvent) => {
-                        e.preventDefault();
-                        console.log("navigateToCategory(category)");
-                        //dispatch(navigateToCategory("category"));
-                      }}>
-                      <Icon icon={icon}  />
-                    </IconButton>
-                  </Tooltip>
-
-                    
-                      <ExpandMore
-                        expand={expanded}
-                        onClick={handleExpandClick}
-                        aria-expanded={expanded}
-                        aria-label="show more">
-                        <Icon icon="acc" color="primary" />
-                      </ExpandMore>
-
-
-                  
-                    
+          avatar={<React.Fragment>
+                    <Tooltip title={category}>
+                      <IconButton
+                        color="primary"
+                        onClick={(e: React.MouseEvent) => {
+                          e.preventDefault();
+                          dispatch(goTo({
+                            renderAs: "category",
+                            track,
+                          }));
+                        }}>
+                        <Icon icon={icon}  />
+                      </IconButton>
+                    </Tooltip>
                   </React.Fragment>}
+          action={<React.Fragment>
+                  
+                  <ExpandMore
+                    expand={expanded}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more">
+                    <Icon icon="acc" color="primary" />
+                  </ExpandMore>
+                </React.Fragment>}
           title={<ButtonBase 
                   sx={{
                     width: "100%",
@@ -116,7 +117,7 @@ export default function TrackListItem(props:any) {
                     /> : null }
           <CardContent>
             <Typography variant="body2">
-              {body}
+              {excerpt}
             </Typography>
           </CardContent>
         </Collapse>
