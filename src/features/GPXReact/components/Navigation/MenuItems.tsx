@@ -29,7 +29,12 @@ export default function MenuItems() {
             { !isProd ? <React.Fragment>
                 
                 <MenuItem sx={{width: 200}} onClick={() =>{
-                    dispatch(goTo({renderAs: "external"}));
+                    dispatch(goTo({
+                        renderAs: "external",
+                        options: {
+                            url: "https://"
+                        }
+                    }));
                     handleMenuClose();
                 }}>
                     <ListItemIcon>
@@ -44,10 +49,13 @@ export default function MenuItems() {
                 <Divider />
             </React.Fragment> : null }
 
-
-
             <MenuItem sx={{width: 200}} onClick={() =>{            
-                dispatch(goTo({renderAs: "internal"}));
+                dispatch(goTo({
+                    renderAs: "internal", 
+                    options: {
+                        url: "/",
+                    },
+                }));
                 handleMenuClose()
                 }}>
                 <ListItemIcon>
@@ -62,7 +70,12 @@ export default function MenuItems() {
 
             
             <MenuItem sx={{width: 200}} onClick={() => {
-                dispatch(goTo({}));
+                dispatch(goTo({
+                    renderAs: "external",
+                    options: {
+                        url: "dkasjdjl"
+                    }
+                }));
                 handleMenuClose()
             }}>
                 <ListItemIcon>

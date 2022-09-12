@@ -32,7 +32,6 @@ export default function GPXMap() {
     })
   })
 
-
   return (
     <Box sx={{m:0.5}}>
       <Card sx={{ width: "100%" }}>
@@ -47,13 +46,13 @@ export default function GPXMap() {
         />
         <CardActions>
           <Button
-            variant="contained"
+            variant="text"
             onClick={(e: React.MouseEvent) => {
               e.preventDefault();
               console.log ("flyTo...")
             }}
           >
-            Fly to Somewhere
+            Fly Somewhere
           </Button>
         </CardActions>
             

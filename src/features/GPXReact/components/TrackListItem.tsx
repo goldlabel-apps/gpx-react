@@ -17,7 +17,6 @@ import {
 } from "@mui/material"
 import {
   Icon,
-  navigateTo,
 } from "../../Shared";
 import {
   goTo,
@@ -69,7 +68,7 @@ export default function TrackListItem(props:any) {
                           e.preventDefault();
                           dispatch(goTo({
                             renderAs: "category",
-                            track,
+                            options: track,
                           }));
                         }}>
                         <Icon icon={icon}  />
@@ -77,15 +76,14 @@ export default function TrackListItem(props:any) {
                     </Tooltip>
                   </React.Fragment>}
           action={<React.Fragment>
-                  
-                  <ExpandMore
-                    expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more">
-                    <Icon icon="acc" color="primary" />
-                  </ExpandMore>
-                </React.Fragment>}
+                    <ExpandMore
+                      expand={expanded}
+                      onClick={handleExpandClick}
+                      aria-expanded={expanded}
+                      aria-label="show more">
+                      <Icon icon="acc" color="primary" />
+                    </ExpandMore>
+                  </React.Fragment>}
           title={<ButtonBase 
                   sx={{
                     width: "100%",
@@ -94,7 +92,10 @@ export default function TrackListItem(props:any) {
                   }}
                   onClick={(e: React.MouseEvent)=>{
                     e.preventDefault();
-                    dispatch(navigateTo(track));
+                    dispatch(goTo({
+                      renderAs: "external",
+                      options:{}
+                    }));
                   }}>
                     <Typography variant="button">
                       {title}
@@ -108,7 +109,7 @@ export default function TrackListItem(props:any) {
                         cursor: "pointer", 
                       }}
                       onClick={() => {
-                        dispatch(navigateTo(track));
+                        // dispatch(navigateTo(track));
                       }}
                       component="img"
                       height="140"

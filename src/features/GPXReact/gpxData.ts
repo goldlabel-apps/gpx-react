@@ -12,6 +12,8 @@ const gpxData = {
         icon: "dive",
         image: "/jpg/Maltese-Islands-Diving-Guide/Maltese-Islands-Diving-Guide.jpg",
         body: "Based on 'Maltese Islands Diving Guide' published in 1997 by Ned Middleton",
+        zoom: 9.6,
+        center: [14.38, 35.94],
       },
     },
     { 
@@ -26,6 +28,8 @@ const gpxData = {
         image: "/jpg/The-Tugboat-Rozi/The-Tugboat-Rozi.jpg",
         excerpt: "Valetta tugboat",
         body: "One of the most popular dive sites on the islands, Rozi was a former tugboat that operated in Grand Harbour of Valletta. She was scuttled in 1992 as an underwater tourist attraction for submarine tours, and also became an artificial reef for scuba divers. Tugboat Rozi wreck is easily dived from the shore, and is located close to Patrol Boat P29 wreck.",
+        zoom: 12,
+        center: [14.18, 35.74],
       },
     },
     { 

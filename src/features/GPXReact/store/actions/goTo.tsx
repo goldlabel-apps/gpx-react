@@ -4,8 +4,9 @@ import { setSharedKey } from "../../../Shared"
 export const goTo = (payload: any): AppThunk => async (dispatch: any) => {
   try {
     console.log("goTo", payload);
-    const { renderAs, track } = payload;
-    const { category } = track;
+    const { renderAs, options } = payload;
+    const { category, url } = options;
+    
     dispatch(setSharedKey({ key: 'notifying', value: {
       severity: "success",
       message: `render ${category} as... ${renderAs} `,

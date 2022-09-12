@@ -36,10 +36,7 @@ export default function GPXReact() {
     return (
       <React.Fragment>
         <Topbar />
-        <Grid container sx={{mb:10}}>
-          <Grid item xs={12} md={8}>
-            <GPXMap />
-          </Grid>
+        <Grid container sx={{mb:5}}>
           <Grid item xs={12} md={4}>
             <Grid container>
               { !tracks.length ? null : <React.Fragment>
@@ -53,6 +50,9 @@ export default function GPXReact() {
               </React.Fragment>}
             </Grid>
           </Grid>
+          <Grid item xs={12} md={8}>
+            <GPXMap />
+          </Grid>
         </Grid>
         <Bottombar />
       </React.Fragment>
@@ -63,6 +63,7 @@ export default function GPXReact() {
             <Topbar />
             <Grid container sx={{mb:10}}>
               <Grid item xs={12} md={4}>
+                
                 <Grid container sx={{mt:0.5}}>
                 { !tracks.length ? null : <React.Fragment>
                   { tracks.map((item: any, i: number) => {
