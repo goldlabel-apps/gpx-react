@@ -51,6 +51,7 @@ export default function TrackListItem(props:any) {
     image,
     icon,
     excerpt,
+    path,
   } = track;
 
   let hasImage = false;
@@ -68,7 +69,9 @@ export default function TrackListItem(props:any) {
                           e.preventDefault();
                           dispatch(goTo({
                             renderAs: "category",
-                            options: track,
+                            options: {
+                              category,
+                            },
                           }));
                         }}>
                         <Icon icon={icon}  />
@@ -93,8 +96,10 @@ export default function TrackListItem(props:any) {
                   onClick={(e: React.MouseEvent)=>{
                     e.preventDefault();
                     dispatch(goTo({
-                      renderAs: "external",
-                      options:{}
+                      renderAs: "internal",
+                      options:{
+                        path,
+                      },
                     }));
                   }}>
                     <Typography variant="button">
@@ -105,11 +110,16 @@ export default function TrackListItem(props:any) {
         />
         <Collapse in={expanded} timeout="auto" unmountOnExit>
         {hasImage ? <CardMedia
+                      onClick={() => {
+                        dispatch(goTo({
+                          renderAs: "internal",
+                          options:{
+                            path,
+                          },
+                        }));
+                      }}
                       sx={{ 
                         cursor: "pointer", 
-                      }}
-                      onClick={() => {
-                        // dispatch(navigateTo(track));
                       }}
                       component="img"
                       height="140"
