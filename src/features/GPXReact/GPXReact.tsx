@@ -11,7 +11,7 @@ import {
   Grid,
 } from "@mui/material";
 import {
-  Track,
+  TrackListItem,
   Bottombar,
   Topbar,
   GPXMap,
@@ -36,13 +36,13 @@ export default function GPXReact() {
     return (
       <React.Fragment>
         <Topbar />
-        <Grid container>
+        <Grid container sx={{mb:10}}>
           { !tracks.length ? null : <React.Fragment>
             { tracks.map((item: any, i: number) => {
               return (<Grid 
                         key={`track_${i}`}
                         item xs={12} sm={6}>
-                        <Track track={item.value} setMode={"list"}/>
+                        <TrackListItem track={item.value} setMode={"list"}/>
                       </Grid>)
             })}
             </React.Fragment>}

@@ -4,6 +4,7 @@
 import * as React from "react"
 import DefaultIcon from "@mui/icons-material/DisabledByDefault"
 import HomeIcon from "@mui/icons-material/Home"
+import ShoppingIcon from "@mui/icons-material/ShoppingBag";
 import SitesIcon from "@mui/icons-material/Language"
 import SpearoIcon from "@mui/icons-material/Pool"
 import InitIcon from "@mui/icons-material/NotStarted"
@@ -83,6 +84,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube"
 import FullscreenIcon from "@mui/icons-material/Fullscreen"
 import AccExpandIcon from "@mui/icons-material/ExpandMore"
 import ArchiveIcon from "@mui/icons-material/ArchiveOutlined"
+import LockedIcon from "@mui/icons-material/LockOutlined"
 
 
 export default function Icon(props: any) {
@@ -94,6 +96,15 @@ export default function Icon(props: any) {
     case "home":
       iconFragment = <HomeIcon color={color} />
       break
+
+      case "locked":
+        iconFragment = <LockedIcon color={color} />
+        break
+
+        case "shopping":
+          iconFragment = <ShoppingIcon color={color} />
+          break
+
     case "persona":
       iconFragment = <PersonaIcon color={color} />
       break

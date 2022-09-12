@@ -27,8 +27,12 @@ export default function Bottombar() {
         }}>
         <Toolbar>
           
-          <StyledFab color="primary">
-            <Icon icon="dive" />
+          <StyledFab color="primary"
+          onClick={(e: React.MouseEvent) => {
+            e.preventDefault();
+            console.log ("New GPX");
+          }}>
+            <Icon icon="add" />
           </StyledFab>
           
           <Box sx={{ flexGrow: 1 }} />
@@ -38,7 +42,4 @@ export default function Bottombar() {
 }
 
 /*
-<IconButton color="secondary">
-            <Icon icon="up" />
-          </IconButton>
 */

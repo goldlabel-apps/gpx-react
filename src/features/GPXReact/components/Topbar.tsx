@@ -105,13 +105,14 @@ export default function Topbar() {
           
           <Box sx={{ ml: -3 }}>
             <IconButton
-              aria-label="user"
+              aria-label="home"
               aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleMenuOpen}
+              onClick={()=>{
+                window.open("/", "_self");
+              }}
               color="inherit"
             >
-                <Icon icon="menu"/>
+                <Icon icon="home"/>
             </IconButton>
 
             <IconButton
@@ -159,9 +160,7 @@ export default function Topbar() {
               aria-label="diving"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={()=>{
-                window.open("/diving", "_self");
-              }}
+              onClick={handleMenuOpen}
               color="inherit"
             >
               <Badge badgeContent={2} color="primary">

@@ -1,13 +1,43 @@
 const gpxData = {
   tracks: [
     { 
+      label: "Maltese Islands Diving Guide",
+      trackType: "map",
+      value: {
+        type: "post",
+        uid: "P_0000000021",
+        title: "Maltese Islands Diving Guide",
+        excerpt: "Shore or boat",
+        path: "/diving",
+        icon: "dive",
+        image: "/jpg/Maltese-Islands-Diving-Guide/Maltese-Islands-Diving-Guide_800.jpg",
+        body: "Based on 'Maltese Islands Diving Guide' publishished in paperback in 1997 by Ned Middleton",
+      },
+    },
+    { 
+      label: "Rozi",
+      trackType: "map",
+      value: {
+        uid: "D_6600000002",
+        title: "Rozi Wreck",
+        excerpt: "Valetta tugboat",
+        icon: "dive",
+        path: "/diving/wrecks/rozi",
+        image: "/jpg/The-Tugboat-Rozi/The-Tugboat-Rozi_800.jpg",
+        body: "One of the most popular dive sites on the islands",
+        meta:{
+          extratext: "Rozi was a former tugboat that operated in Grand Harbour of Valletta. She was scuttled in 1992 as an underwater tourist attraction for submarine tours, and also became an artificial reef for scuba divers. Tugboat Rozi wreck is easily dived from the shore, and is located close to Patrol Boat P29 wreck.",
+        }
+      },
+    },
+    { 
       label: "Spearfishing",
       trackType: "map",
       value: {
         type: "googleMap",
         uid: "GM_0000000001",
         title: "Spearfishing",
-        // subheader: "With no boat",
+        excerpt: "With no boat",
         path: "/spearfishing",
         icon: "spearo",
         embed:"",
@@ -21,44 +51,13 @@ const gpxData = {
         ],
       },
     },
-    { 
-      label: "Diving",
-      trackType: "map",
-      value: {
-        type: "post",
-        uid: "P_0000000021",
-        title: "Diving",
-        // subheader: "Shore or boat",
-        path: "/diving",
-        icon: "dive",
-        image: "/jpg/Maltese-Islands-Diving-Guide/Maltese-Islands-Diving-Guide_800.jpg",
-        body: "Based on 'Maltese Islands Diving Guide' publishished in paperback in 1997 by Ned Middleton",
-      },
-    },
-  
-    { 
-      label: "Rozi",
-      trackType: "map",
-      value: {
-        uid: "D_0000000002",
-        title: "Rozi Wreck",
-        // subheader: "Valetta tugboat",
-        icon: "dive",
-        path: "/diving/wrecks/rozi",
-        image: "/jpg/The-Tugboat-Rozi/The-Tugboat-Rozi_800.jpg",
-        body: "One of the most popular dive sites on the islands",
-        meta:{
-          extratext: "Rozi was a former tugboat that operated in Grand Harbour of Valletta. She was scuttled in 1992 as an underwater tourist attraction for submarine tours, and also became an artificial reef for scuba divers. Tugboat Rozi wreck is easily dived from the shore, and is located close to Patrol Boat P29 wreck.",
-        }
-      },
-    },
     {
       label: "Anchor Bay",
       trackType: "map",
       value: {
         uid: "D_0003000002",
         title: "Anchor Bay",
-        // subheader: "Cave dive",
+        excerpt: "Cave dive",
         icon: "dive",
         path: "/diving/anchor-bay",
         image: "/jpg/Anchor-Bay/Anchor-Bay_400.jpg",
@@ -68,9 +67,50 @@ const gpxData = {
         }
       },
     },
-
-    
+    { 
+      label: "Decathlon",
+      trackType: "shopping",
+      value: {
+        type: "shopping",
+        uid: "SH_0000000001",
+        title: "Decathlon",
+        excerpt: "With no boat",
+        path: "/shopping/decathlon",
+        icon: "shopping",
+        embed:"",
+        image: "/jpg/Decathlon/Decathlon_800.jpg",
+        body: "TO SUSTAINABLY WE MAKE THE PLEASURE AND BENEFITS OF SPORT ACCESSIBLE TO THE MANY",
+        links: [
+          {
+            label: "Decathlon",
+            value: "https://www.decathlon.mt",
+          }
+        ],
+      },
+    },
+    { 
+      label: "Xlendi Caves",
+      value: {
+        category: "diving",
+        path: "/diving/xlendi-caves",
+        uid: "D_0010001001",
+        icon: "diving",
+        title: "Xlendi Caves",
+        image: "/jpg/XlendiCaves/XlendiCaves.jpg",
+        excerpt: "If you enter the water on the left hand side of the valley by the fifth ladder and following a compass heading of 300 degrees you will find the entrance to Xlendi Cave and the tunnel entrance is located just 2 metres deep on the cliff side",
+        format:"html",
+        body: "<p>Ix Xledni Bay is a typical Gozitan fishing village located in a valley on the south west coast of Gozo. There are a number of bars restaurants and hotels serving the village. And the bay has a small beach, Xlendi bay is very popular with swimmers, snorkelers and divers.</p><p>If you enter the water on the left hand side of the valley by the fifth ladder and following a compass heading of 300 degrees you will find the entrance to Xlendi Cave and the tunnel entrance is located just 2 metres deep on the cliff side</p>",
+        links: [
+          {
+            label: "paradisediving",
+            value: "https://paradisediving.com/xlendi-cave/",
+          }
+        ],
+        tags:[],
+      },
+    },
   ],
+  
   langauges: [
     {
       label: "English",
