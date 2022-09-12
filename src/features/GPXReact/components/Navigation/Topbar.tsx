@@ -14,10 +14,10 @@ import {
 } from "@mui/material"
 import {
   MenuItems,
-} from "../../GPXReact";
+} from "../../../GPXReact";
 import {
   Icon,
-} from "../../Shared";
+} from "../../../Shared";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',

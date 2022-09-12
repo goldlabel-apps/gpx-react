@@ -6,7 +6,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material"
-import {Icon} from "../../Shared";
+import {Icon} from "../../../Shared";
 
 export default function MenuItems() {
 

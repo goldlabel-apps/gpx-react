@@ -8,12 +8,12 @@ import {
 import Toolbar from '@mui/material/Toolbar';
 
 import Fab from '@mui/material/Fab';
-import {Icon} from "../../Shared";
+import {Icon} from "../../../Shared";
 
 const StyledFab = styled(Fab)({
   position: 'absolute',
   zIndex: 1,
-  top: -30,
+  top: -16,
   left: 0,
   right: 0,
   margin: '0 auto',

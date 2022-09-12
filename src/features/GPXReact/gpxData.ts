@@ -1,4 +1,6 @@
 const gpxData = {
+  categories:[],
+  tags:[],
   tracks: [
     { 
       label: "Maltese Islands Diving Guide",
@@ -10,8 +12,8 @@ const gpxData = {
         excerpt: "Shore or boat",
         path: "/diving",
         icon: "dive",
-        image: "/jpg/Maltese-Islands-Diving-Guide/Maltese-Islands-Diving-Guide_800.jpg",
-        body: "Based on 'Maltese Islands Diving Guide' publishished in paperback in 1997 by Ned Middleton",
+        image: "/jpg/Maltese-Islands-Diving-Guide/Maltese-Islands-Diving-Guide.jpg",
+        body: "Based on 'Maltese Islands Diving Guide' published in 1997 by Ned Middleton",
       },
     },
     { 
@@ -23,7 +25,7 @@ const gpxData = {
         excerpt: "Valetta tugboat",
         icon: "dive",
         path: "/diving/wrecks/rozi",
-        image: "/jpg/The-Tugboat-Rozi/The-Tugboat-Rozi_800.jpg",
+        image: "/jpg/The-Tugboat-Rozi/The-Tugboat-Rozi.jpg",
         body: "One of the most popular dive sites on the islands",
         meta:{
           extratext: "Rozi was a former tugboat that operated in Grand Harbour of Valletta. She was scuttled in 1992 as an underwater tourist attraction for submarine tours, and also became an artificial reef for scuba divers. Tugboat Rozi wreck is easily dived from the shore, and is located close to Patrol Boat P29 wreck.",
@@ -41,7 +43,7 @@ const gpxData = {
         path: "/spearfishing",
         icon: "spearo",
         embed:"",
-        image: "/jpg/Spearfishing/Spearfishing_800.jpg",
+        image: "/jpg/Spearfishing/Spearfishing.jpg",
         body: "",
         links: [
           {
@@ -60,7 +62,7 @@ const gpxData = {
         excerpt: "Cave dive",
         icon: "dive",
         path: "/diving/anchor-bay",
-        image: "/jpg/Anchor-Bay/Anchor-Bay_400.jpg",
+        image: "/jpg/Anchor-Bay/Anchor-Bay.jpg",
         body: "Anchor Bay Cave, also known as Scorpion Cave, is the best dive site in Anchor Bay. The cave is located on the south side of the bay, approximately 150 m from the entry/exit point at the concrete jetty",
         meta:{
           extratext: "(Popeye Village)",
@@ -78,7 +80,7 @@ const gpxData = {
         path: "/shopping/decathlon",
         icon: "shopping",
         embed:"",
-        image: "/jpg/Decathlon/Decathlon_800.jpg",
+        image: "/jpg/Decathlon/Decathlon.jpg",
         body: "TO SUSTAINABLY WE MAKE THE PLEASURE AND BENEFITS OF SPORT ACCESSIBLE TO THE MANY",
         links: [
           {
