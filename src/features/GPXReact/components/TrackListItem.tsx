@@ -59,7 +59,7 @@ export default function TrackListItem(props:any) {
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
         <CardHeader
-          avatar={<React.Fragment>
+          action={<React.Fragment>
                   <Tooltip title={category}>
                     <IconButton
                       color="primary"
