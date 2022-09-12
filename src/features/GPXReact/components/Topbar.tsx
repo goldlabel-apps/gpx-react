@@ -2,16 +2,18 @@ import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import {
   AppBar,
+  ButtonBase,
   Box,
   Toolbar,
   IconButton,
   InputBase,
   Badge,
   Menu,
+  Typography,
+  Tooltip,
 } from "@mui/material"
 import {
   MenuItems,
-  // GPXIcon,
 } from "../../GPXReact";
 import {
   Icon,
@@ -58,8 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Topbar() {
 
-  const showSearch = true;
-  
+  const showSearch = false;
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const isMenuOpen = Boolean(anchorEl);
   
@@ -78,13 +79,13 @@ export default function Topbar() {
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'top',
-        horizontal: 'left',
+        horizontal: 'right',
       }}
       id={menuId}
       keepMounted
       transformOrigin={{
         vertical: 'top',
-        horizontal: 'left',
+        horizontal: 'right',
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
@@ -102,44 +103,48 @@ export default function Topbar() {
           boxShadow: "none",
         }}>
         <Toolbar>
-          
-          <Box sx={{ ml: -3 }}>
-            <IconButton
-              aria-label="home"
-              aria-controls={menuId}
-              onClick={()=>{
-                window.open("/", "_self");
-              }}
-              color="inherit"
-            >
-                <Icon icon="home"/>
-            </IconButton>
-
-            <IconButton
-              aria-label="diving"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={()=>{
-                window.open("/diving", "_self");
-              }}
-              color="inherit"
-            >
-                <Icon icon="diving" />
-            </IconButton>
-
-            <IconButton
-              aria-label="user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={()=>{
-                window.open("/spearfishing", "_self");
-              }}
-              color="inherit"
-            >
-                <Icon icon="spearo" />
-              
-            </IconButton>
-
+          <ButtonBase
+            onClick={()=>{
+              window.open("/", "_self");
+            }}
+          >
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ 
+                display: { xs: 'none', sm: 'block' },
+                ml:-2,
+                mr: 2,
+              }}>
+              Maltese Islands Diving Guide
+            </Typography>
+          </ButtonBase>
+          <Box sx={{}}>
+            <Tooltip title="Diving">
+              <IconButton
+                aria-label="diving"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={()=>{
+                  window.open("/diving", "_self");
+                }}
+                color="inherit">
+                  <Icon icon="diving" />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Spearfishing">
+              <IconButton
+                aria-label="user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={()=>{
+                  window.open("/spearfishing", "_self");
+                }}
+                color="inherit">
+                  <Icon icon="spearo" />
+              </IconButton>
+            </Tooltip>
 
           </Box>
           <Box sx={{flexGrow:1}}/>
@@ -155,18 +160,18 @@ export default function Topbar() {
               }}
             />
           </Search> : null }
-          
-          <IconButton
+          <Tooltip title="Menu">
+            <IconButton
               aria-label="diving"
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <Badge badgeContent={0} color="primary">
-                <Icon icon="notify" />
+                <Icon icon="menu" />
               </Badge>
             </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
       {renderMenu}
@@ -174,14 +179,4 @@ export default function Topbar() {
   );
 }
 /*
-<Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ 
-              display: { xs: 'none', sm: 'block' },
-              ml:-2,
-            }}>
-            Maltese Islands Diving Guide
-          </Typography>
 */

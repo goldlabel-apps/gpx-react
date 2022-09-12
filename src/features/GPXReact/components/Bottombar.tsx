@@ -2,7 +2,11 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import {
+  Tooltip,
+} from '@mui/material/';
 import Toolbar from '@mui/material/Toolbar';
+
 import Fab from '@mui/material/Fab';
 import {Icon} from "../../Shared";
 
@@ -26,17 +30,16 @@ export default function Bottombar() {
           boxShadow: "none",  
         }}>
         <Toolbar>
-          
-          <StyledFab color="primary"
-          onClick={(e: React.MouseEvent) => {
-            e.preventDefault();
-            console.log ("New GPX");
-          }}>
-            <Icon icon="add" />
-          </StyledFab>
-          
+          <Tooltip title="Add Content">
+            <StyledFab color="primary"
+            onClick={(e: React.MouseEvent) => {
+              e.preventDefault();
+              console.log ("New GPX");
+            }}>
+              <Icon icon="add" />
+            </StyledFab>
+          </Tooltip>
           <Box sx={{ flexGrow: 1 }} />
-          
         </Toolbar>
       </AppBar>);
 }

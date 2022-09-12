@@ -34,33 +34,7 @@ export default function MenuItems() {
                 </ListItemText>
             </MenuItem>
 
-            <MenuItem sx={{width: 200}} onClick={() => {
-                window.open("/diving", "_self")
-                handleMenuClose()
-            }}>
-                <ListItemIcon>
-                    <Icon icon="dive" color="primary" />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="body2">
-                        Diving
-                    </Typography>
-                </ListItemText>
-            </MenuItem>
-
-            <MenuItem sx={{width: 200}} onClick={() => {
-                window.open("/spearfishing", "_self")
-                handleMenuClose()
-            }}>
-                <ListItemIcon>
-                    <Icon icon="spearo" color="primary" />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="body2">
-                        Spearfishing
-                    </Typography>
-                </ListItemText>
-            </MenuItem>
+            
 
             <Divider />
 
@@ -100,3 +74,32 @@ export default function MenuItems() {
         </React.Fragment>
     );
 }
+/*
+<MenuItem sx={{width: 200}} onClick={() => {
+                window.open("/diving", "_self")
+                handleMenuClose()
+            }}>
+                <ListItemIcon>
+                    <Icon icon="dive" color="primary" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="body2">
+                        Diving
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+
+            <MenuItem sx={{width: 200}} onClick={() => {
+                window.open("/spearfishing", "_self")
+                handleMenuClose()
+            }}>
+                <ListItemIcon>
+                    <Icon icon="spearo" color="primary" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="body2">
+                        Spearfishing
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+*/
