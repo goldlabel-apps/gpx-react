@@ -16,7 +16,7 @@ export default function GPXMap() {
   const id = 'gpxmap';
   const map = React.useRef(null);
   const zoom = 9.6;
-  const height = 450;
+  const height = 419;
   const container = React.useRef(null);
   const center = [14.38, 35.94];
   
@@ -43,7 +43,15 @@ export default function GPXMap() {
           sx={{ height }}
           ref={container}
         />
-        <CardActions>
+        
+            
+      </Card>
+    </Box> 
+  );
+}
+
+/*
+<CardActions>
           <Button
             variant="text"
             onClick={(e: React.MouseEvent) => {
@@ -54,8 +62,4 @@ export default function GPXMap() {
             Fly Somewhere
           </Button>
         </CardActions>
-            
-      </Card>
-    </Box> 
-  );
-}
+*/

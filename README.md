@@ -6,7 +6,7 @@ This is a React Progressive Web App. It uses data created using a Garmin Decent 
 
 ```html
 <noscript>You'll need a Lot more JavaScript to run this</noscript>
-    <div id="gpx-react" />
+  <div id="gpx-react" />
 ```
 
 Parts of the app are available free on GitHub public repositories. Some are not.
