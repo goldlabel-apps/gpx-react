@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from "../../featuresStore"
-import {gpxData} from "../gpxData"
+import {gpxData} from "../data/gpxData"
 
 export interface GPXReactSlice {
   error: any

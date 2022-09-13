@@ -46,12 +46,12 @@ export default function TrackListItem(props:any) {
 
   const {
     title,
+    slug,
     category,
     subheader,
     image,
     icon,
     excerpt,
-    path,
   } = track;
 
   let hasImage = false;
@@ -92,13 +92,14 @@ export default function TrackListItem(props:any) {
                     width: "100%",
                     textAlign: "left",
                     display: "block",
+                    pt:1, pb:1,
                   }}
                   onClick={(e: React.MouseEvent)=>{
                     e.preventDefault();
                     dispatch(goTo({
                       renderAs: "internal",
                       options:{
-                        path,
+                        slug,
                       },
                     }));
                   }}>
@@ -114,7 +115,7 @@ export default function TrackListItem(props:any) {
                         dispatch(goTo({
                           renderAs: "internal",
                           options:{
-                            path,
+                            slug,
                           },
                         }));
                       }}

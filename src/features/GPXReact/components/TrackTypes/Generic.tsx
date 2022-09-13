@@ -5,6 +5,8 @@ import {
 } from "../../../Shared/store/hooks";
 import { styled } from '@mui/material/styles';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import ReactMarkdown from 'react-markdown';
+
 import {
   Box,
   Card,
@@ -35,7 +37,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function Generic(props:any) {
-
+  let mode = "list";
   const dispatch = useFeatureDispatch();
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => setExpanded(!expanded);
@@ -53,9 +55,9 @@ export default function Generic(props:any) {
   } = track.value;
   let hasImage = false;
   if(image && image !== "") hasImage = true;
-
-  let mode = "list";
+  
   if (setMode) mode = setMode;
+
   return (
     <Box sx={{m:1}}>
       <Card sx={{ width: "100%" }}>
@@ -102,11 +104,16 @@ export default function Generic(props:any) {
                     /> : null }
         
           <CardContent>
+            {bodyFormat === "text" ? <Typography variant="body2">
+              {body}
+            </Typography> : null }
+
             {bodyFormat === "html" ? <Typography variant="body1">
               {<span dangerouslySetInnerHTML={{ __html: body }}></span>}
-            </Typography> : <Typography variant="body2">
-              {body}
-            </Typography> }
+            </Typography> : null }
+
+            {bodyFormat === "md" ? <ReactMarkdown children={body} /> : null }
+
           </CardContent>
           <CardActions>
             

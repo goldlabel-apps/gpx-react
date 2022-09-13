@@ -22,12 +22,13 @@ export default function GPXReact() {
   const gpxReact = useFeatureSelect( selectGPXReact );
   const {tracks} = gpxReact.gpxData;
   const location = useLocation();
-  const {pathname} = location
+  const {pathname} = location;
   
   let track = null;
   let trackPath = pathname;
+
   for(let i =0; i < tracks.length; i++){
-    if (trackPath === tracks[i].value.path){
+    if (trackPath.slice(1,trackPath.length) === tracks[i].value.slug){
       track = tracks[i];
       break;
     }

@@ -4,12 +4,12 @@ import { setSharedKey } from "../../../Shared"
 export const goTo = (payload: any): AppThunk => async (dispatch: any) => {
   try {
     const { renderAs, options } = payload;
-    const { category, url, path } = options;
+    const { category, url, slug } = options;
     if(renderAs === "external"){
       window.open(url, "_blank");
     }
     if(renderAs === "internal"){
-      console.log ("internal", path);
+      window.open(slug, "_self");
     }
     if (category){
       dispatch(setSharedKey({ key: 'notifying', value: {
