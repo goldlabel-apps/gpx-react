@@ -1,7 +1,7 @@
 {
   "name": "gpx-react",
   "description": "View, Edit & Share Geodata using React & Material UI",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -24,7 +24,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^0.27.2",
-    "mapbox-gl": "^2.10.0",
+    "mapbox-gl": "1.13.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-colorful": "^5.5.1",

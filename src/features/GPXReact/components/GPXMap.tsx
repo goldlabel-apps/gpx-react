@@ -3,10 +3,8 @@ import * as React from "react";
 import mapboxgl from "mapbox-gl";
 import {
   Box,
-  Button,
   Card,
   CardHeader,
-  CardActions,
 } from "@mui/material";
 import {Icon} from "../../Shared";
 
