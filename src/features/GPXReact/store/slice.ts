@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from "../../featuresStore"
-import {gpxData} from "../data/gpxData"
+import {tracks} from "../data/tracks"
 
 export interface GPXReactSlice {
   error: any
@@ -9,7 +9,7 @@ export interface GPXReactSlice {
   confirming: any
   newItem: any
   newItemValue: string
-  gpxData: any
+  tracks: any
 }
 
 const initialState: GPXReactSlice = {
@@ -19,7 +19,7 @@ const initialState: GPXReactSlice = {
   notifying: null,
   newItem: null,
   newItemValue: "",
-  gpxData,
+  tracks,
 }
 
 export const gpxreactSlice = createSlice({

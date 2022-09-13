@@ -103,24 +103,7 @@ export default function Topbar() {
           boxShadow: "none",
         }}>
         <Toolbar>
-          <ButtonBase
-            onClick={()=>{
-              window.open("/", "_self");
-            }}
-          >
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ 
-                display: { xs: 'none', sm: 'block' },
-                ml:-2,
-                mr: 2,
-              }}>
-              Maltese Islands Diving Guide
-            </Typography>
-          </ButtonBase>
-          <Box sx={{}}>
+          <Box sx={{ml:-2, mr:2}}>
             <Tooltip title="Diving">
               <IconButton
                 aria-label="diving"
@@ -145,7 +128,24 @@ export default function Topbar() {
                   <Icon icon="spearo" />
               </IconButton>
             </Tooltip>
-
+          </Box>
+          <Box sx={{}}>
+            <ButtonBase
+              onClick={()=>{
+                window.open("/", "_self");
+              }}
+            >
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ 
+                  display: { xs: 'none', sm: 'block' },
+                  
+                }}>
+                Maltese Islands Diving Guide
+              </Typography>
+            </ButtonBase>
           </Box>
           <Box sx={{flexGrow:1}}/>
 

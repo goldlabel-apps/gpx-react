@@ -20,7 +20,7 @@ import {
 export default function GPXReact() {
 
   const gpxReact = useFeatureSelect( selectGPXReact );
-  const {tracks} = gpxReact.gpxData;
+  const {tracks} = gpxReact;
   const location = useLocation();
   const {pathname} = location;
   

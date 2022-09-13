@@ -13,7 +13,6 @@ import {Icon} from "../../Shared";
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESST_TOKEN;
 
 export default function GPXMap() {
-
   const id = 'gpxmap';
   const map = React.useRef(null);
   const zoom = 9.6;

@@ -4,6 +4,10 @@ const langauges = [
         value: "en",
     },
     {
+        label: "Maltese",
+        value: "mt",
+    },
+    {
         label: "French",
         value: "fr",
     },
