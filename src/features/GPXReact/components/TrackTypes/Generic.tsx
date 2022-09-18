@@ -42,7 +42,7 @@ export default function Generic(props:any) {
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => setExpanded(!expanded);
   const {track, setMode} = props;
-
+  console.log ("generic", track)
   if (!track) return null;
 
   const {
@@ -59,7 +59,7 @@ export default function Generic(props:any) {
   if (setMode) mode = setMode;
 
   return (
-    <Box sx={{m:1}}>
+    <Box sx={{m:1, width: "100%"}}>
       <Card sx={{ width: "100%" }}>
         <CardHeader
           avatar={<React.Fragment>
