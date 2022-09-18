@@ -6,7 +6,7 @@ import {
   Card,
   CardHeader,
 } from "@mui/material";
-import {Icon} from "../../Shared";
+import {Icon} from "../../../Shared";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESST_TOKEN;
 

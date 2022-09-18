@@ -2,7 +2,6 @@ import GPXReact from "./GPXReact";
 import TrackListItem from "./components/TrackListItem";
 import Generic from "./components/TrackTypes/Generic";
 
-import GPXMap from "./components/GPXMap";
 import Bottombar from "./components/Navigation/Bottombar";
 import MenuItems from "./components/Navigation/MenuItems";
 
@@ -17,7 +16,6 @@ export {
   TrackListItem,
   Generic,
   Bottombar,
-  GPXMap,
   Topbar,
   MenuItems,
   selectGPXReact,
