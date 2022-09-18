@@ -143,8 +143,9 @@ export default function Topbar() {
                   display: { xs: 'none', sm: 'block' },
                   
                 }}>
-                Maltese Islands Diving Guide
+                {process.env.REACT_APP_NAME}
               </Typography>
+
             </ButtonBase>
           </Box>
           <Box sx={{flexGrow:1}}/>

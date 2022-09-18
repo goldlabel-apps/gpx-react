@@ -9,8 +9,7 @@ This is a React Progressive Web App. It uses data created using a Garmin Decent 
   <div id="gpx-react" />
 ```
 
-Parts of the app are available free on GitHub public repositories. Some are not.
-
+Some features of the app are available free on GitHub public repositories. Some are not.
 eg: [index.tsx](https://github.com/listingslab-software/gpx-react/blob/master/src/index.tsx)
 
 ```javascript
