@@ -1,10 +1,10 @@
 {
-  "name": "GPXReact",
-  "short_name": "GPXReact",
+  "name": "Dive Malta",
+  "short_name": "Dive Malta",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#2c5e92",
-  "background_color": "#2c5e92",
+  "theme_color": "#003f6b",
+  "background_color": "#003f6b",
   "icons": [
     {
       "src": "favicon.ico",

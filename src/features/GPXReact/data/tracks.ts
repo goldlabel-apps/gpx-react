@@ -134,7 +134,20 @@ const tracks = [
         ],
       },
     },
-    
+    { 
+      value: {
+        uid: "DM_00000asdf21",
+        slug: "abcdivingmalta",
+        category: "advert",
+        tags: ["dive shop"],
+        icon: "spearo",
+        title: "ABC Diving",
+        excerpt: "",
+        image: "/jpg/ABCDiving/ABCDiving.jpg",
+        bodyFormat: "md",
+        body: "ABC Diving is a small, bespoke PADI dive centre set in an idyllic waterfront location at Turtle Bay just up from St Paul’s Bay in Malta.",
+      },
+    },    
   ]
 
 export { tracks }
