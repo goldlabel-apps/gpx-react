@@ -39,19 +39,19 @@ export default function GPXReact() {
         <Topbar />
         <Grid container sx={{mb:5}}>
           
-          { isMobile ? <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4}>
               <Grid container>
                 { !tracks.length ? null : <React.Fragment>
                 { tracks.map((item: any, i: number) => {
                   return (<Grid 
                             key={`track_${i}`}
                             item xs={12}>
-                            <TrackListItem track={item.value} setMode={"list"}/>
+                            <TrackListItem isMobile={isMobile} track={item.value} setMode={"list"}/>
                           </Grid>)
                 })}
                 </React.Fragment>}
               </Grid>
-            </Grid> : null }
+            </Grid>
 
             <Grid item xs={12} md={8}>
               <Box sx={{pr:1}}>

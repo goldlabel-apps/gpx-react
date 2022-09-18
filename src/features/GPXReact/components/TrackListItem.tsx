@@ -37,13 +37,11 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function TrackListItem(props:any) {
-
   const dispatch = useFeatureDispatch();
-  const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => setExpanded(!expanded);
   const {track} = props;
+  const [expanded, setExpanded] = React.useState(true);
   if (!track) return null;
-
   const {
     title,
     slug,
@@ -53,7 +51,6 @@ export default function TrackListItem(props:any) {
     icon,
     excerpt,
   } = track;
-
   let hasImage = false;
   if(image && image !== "") hasImage = true;
   
