@@ -92,7 +92,7 @@ export default function Advert() {
       </CardContent>
       <CardActions>
         <Button 
-          variant="outlined"
+          variant="text"
           onClick={(e: React.MouseEvent) => {
             e.preventDefault();
             window.open("https://api.whatsapp.com/send?phone=35677333112&text=%F0%9F%9A%80", "_blank");
@@ -103,7 +103,7 @@ export default function Advert() {
           </span>
         </Button>
         <Button 
-          variant="outlined"
+          variant="text"
           onClick={(e: React.MouseEvent) => {
             e.preventDefault();
             window.open("https://www.abcdivingmalta.com", "_blank");
@@ -111,6 +111,17 @@ export default function Advert() {
             <Icon icon="site"/>
           <span style={{marginLeft: "8px", marginRight: "8px", textTransform:"none"}}>
             Website
+          </span>
+        </Button>
+        <Button 
+          variant="text"
+          onClick={(e: React.MouseEvent) => {
+            e.preventDefault();
+            window.open("mailto:info@abcdivingmalta.com", "_blank");
+          }}>
+            <Icon icon="email"/>
+          <span style={{marginLeft: "8px", marginRight: "8px", textTransform:"none"}}>
+            Email
           </span>
         </Button>
       </CardActions>
