@@ -103,32 +103,7 @@ export default function Topbar() {
           boxShadow: "none",
         }}>
         <Toolbar>
-          <Box sx={{ml:-2, mr:2}}>
-            <Tooltip title="Diving">
-              <IconButton
-                aria-label="diving"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={()=>{
-                  window.open("/diving", "_self");
-                }}
-                color="inherit">
-                  <Icon icon="diving" />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Spearfishing">
-              <IconButton
-                aria-label="user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={()=>{
-                  window.open("/spearfishing", "_self");
-                }}
-                color="inherit">
-                  <Icon icon="spearo" />
-              </IconButton>
-            </Tooltip>
-          </Box>
+          
           <Box sx={{}}>
             <ButtonBase
               onClick={()=>{
@@ -183,4 +158,32 @@ export default function Topbar() {
   );
 }
 /*
+
+<Box sx={{ml:-2, mr:2}}>
+            <Tooltip title="Diving">
+              <IconButton
+                aria-label="diving"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={()=>{
+                  window.open("/diving", "_self");
+                }}
+                color="inherit">
+                  <Icon icon="diving" />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Spearfishing">
+              <IconButton
+                aria-label="user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={()=>{
+                  window.open("/spearfishing", "_self");
+                }}
+                color="inherit">
+                  <Icon icon="spearo" />
+              </IconButton>
+            </Tooltip>
+          </Box>
+
 */

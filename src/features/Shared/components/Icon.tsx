@@ -5,6 +5,7 @@ import * as React from "react"
 import DefaultIcon from "@mui/icons-material/DisabledByDefault"
 import HomeIcon from "@mui/icons-material/Home"
 import ShoppingIcon from "@mui/icons-material/ShoppingBag";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import SitesIcon from "@mui/icons-material/Language"
 import SpearoIcon from "@mui/icons-material/Pool"
 import InitIcon from "@mui/icons-material/NotStarted"
@@ -127,6 +128,10 @@ export default function Icon(props: any) {
       case "csv":
           iconFragment = <CSVIcon color={color} />
           break
+
+      case "whatsapp":
+        iconFragment = <WhatsAppIcon color={color} />
+        break          
 
       case "list":
         iconFragment = <ListIcon color={color} />

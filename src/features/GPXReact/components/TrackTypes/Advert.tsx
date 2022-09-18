@@ -10,6 +10,7 @@ import {
   CardMedia,
   Grid,
 } from "@mui/material";
+import {Icon} from "../../../Shared";
 
 const bull = (
   <Box
@@ -29,49 +30,88 @@ export default function Advert() {
           Featured Dive Shop
         </Typography>
         <Typography variant="h5" component="div">
-          A{bull}B{bull}C{bull} Diving, Malta
+          A{bull}B{bull}C Diving, Malta
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          <Link>abcdivingmalta.com</Link>
+          <Link 
+            sx={{cursor:"pointer"}}
+            onClick={(e: React.MouseEvent) => {
+              e.preventDefault();
+                window.open("https://www.abcdivingmalta.com", "_blank");
+            }}>
+            Diving Malta, Comino &amp; Gozo
+          </Link>
         </Typography>
 
         <Grid container>
-          <Grid item xs={12} md={6}>
-          <Typography variant="body2" component="span">
-          Are you planning on Diving in Malta Comino & Gozo? 
-          Choosing the dive centre which is right for you
-          can be a difficult task with so many to choose from. 
-          That's where ABC Diving Malta comes in
-          <ul>
-          <li>+356 77 333 112</li>
-          <li>The Boathouse, Triq il-Fekruna, Turtle Bay, St. Paul's Bay, SPB 4813, Malta.</li>
-        </ul>
-        </Typography>
-          </Grid>
-          <Grid item xs={12} md={6}>
 
+          <Grid item xs={12} md={6}>
             <CardMedia
-              sx={{p:2, cursor: "pointer"}}
+              sx={{p:1, cursor: "pointer"}}
               component="img"
-              height="256"
+              height="275"
               image="jpg/Adverts/abcdivingmalta.jpg"
               alt="ABC Diving, Malta"
               onClick={(e: React.MouseEvent) => {
                 e.preventDefault();
                 window.open("https://www.abcdivingmalta.com", "_blank");
               }}/>
+            
           </Grid>
+
+          <Grid item xs={12} md={6} sx={{pr:1, pl:1}}>
+
+            <Typography variant="h6" gutterBottom>
+              Best diving experience ever!
+            </Typography>
+            <Typography variant="body1" gutterBottom sx={{m:1}}>
+              "The staff are extremely friendly and available for anything you need. 
+              Marcus, Neil, John are the absolutley best! 
+              They treat you like family"
+            </Typography>
+            <Typography variant="body2" gutterBottom sx={{m:1}}>
+              Elena Sofia Raineri, Dec 2021
+            </Typography>
+            
+            <Typography variant="h6" gutterBottom>
+              Snorkelling
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+            Explore the coastline around Malta and see what the Mediterranean has to offer
+            </Typography>
+          </Grid>
+
+          <Grid item xs={12}>
+          <Typography variant="body1" gutterBottom sx={{m:1}}>
+            ABC Diving is a small, bespoke PADI dive centre set in an idyllic waterfront location at Turtle Bay just up from St Paul’s Bay in Malta.
+          </Typography>
+          
+        </Grid>
 
         </Grid>      
       </CardContent>
       <CardActions>
         <Button 
-          variant="contained"
+          variant="outlined"
+          onClick={(e: React.MouseEvent) => {
+            e.preventDefault();
+            window.open("https://api.whatsapp.com/send?phone=35677333112&text=%F0%9F%9A%80", "_blank");
+          }}>
+            <Icon icon="whatsapp"/>
+          <span style={{marginLeft: "8px", marginRight: "8px", textTransform:"none"}}>
+            WhatsApp
+          </span>
+        </Button>
+        <Button 
+          variant="outlined"
           onClick={(e: React.MouseEvent) => {
             e.preventDefault();
             window.open("https://www.abcdivingmalta.com", "_blank");
           }}>
-          Web
+            <Icon icon="site"/>
+          <span style={{marginLeft: "8px", marginRight: "8px", textTransform:"none"}}>
+            Website
+          </span>
         </Button>
       </CardActions>
     </Card>

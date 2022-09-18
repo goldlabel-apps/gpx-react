@@ -4,7 +4,6 @@ import {
 } from "../Shared/store/hooks";
 import {useLocation} from "react-router-dom";
 import {
-  useTheme,
   useMediaQuery,
   Box,
   Grid,
@@ -19,9 +18,7 @@ import {
 } from "../GPXReact";
 
 export default function GPXReact() {
-  const theme = useTheme();
   const isMobile = useMediaQuery("(min-width:900px)");
-  console.log("isMobile?", isMobile);
   const gpxReact = useFeatureSelect( selectGPXReact );
   const {tracks} = gpxReact;
   const location = useLocation();
@@ -59,9 +56,7 @@ export default function GPXReact() {
                 </React.Fragment>}
               </Grid>
             </Grid> : null }
-            
-          
-        </Grid>
+          </Grid>
         <Bottombar />
       </React.Fragment>
     )
