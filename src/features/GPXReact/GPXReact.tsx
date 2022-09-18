@@ -5,7 +5,6 @@ import {
 import {useLocation} from "react-router-dom";
 import {
   selectGPXReact,
-  GPXMap,
 } from "../GPXReact";
 import {
   Grid,
@@ -50,9 +49,6 @@ export default function GPXReact() {
               })}
               </React.Fragment>}
             </Grid>
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <GPXMap />
           </Grid>
         </Grid>
         <Bottombar />
