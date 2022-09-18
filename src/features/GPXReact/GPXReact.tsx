@@ -38,11 +38,7 @@ export default function GPXReact() {
       <React.Fragment>
         <Topbar />
         <Grid container sx={{mb:5}}>
-          <Grid item xs={12} md={8}>
-            <Box sx={{pr:1}}>
-              <Advert />
-            </Box>
-          </Grid>
+          
           { isMobile ? <Grid item xs={12} md={4}>
               <Grid container>
                 { !tracks.length ? null : <React.Fragment>
@@ -56,6 +52,13 @@ export default function GPXReact() {
                 </React.Fragment>}
               </Grid>
             </Grid> : null }
+
+            <Grid item xs={12} md={8}>
+              <Box sx={{pr:1}}>
+                <Advert />
+              </Box>
+            </Grid>
+
           </Grid>
         <Bottombar />
       </React.Fragment>

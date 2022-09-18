@@ -45,25 +45,7 @@ export default function MenuItems() {
                 </MenuItem>
                 <Divider />
             </React.Fragment> : null }
-
-            <MenuItem sx={{width: 200}} onClick={() =>{            
-                dispatch(goTo({
-                    renderAs: "internal", 
-                    options: {
-                        url: "/",
-                    },
-                }));
-                handleMenuClose()
-            }}>
-                <ListItemIcon>
-                    <Icon icon="refresh" color="primary"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="body2">
-                        Reset
-                    </Typography>
-                </ListItemText>
-            </MenuItem>            
+           
             <MenuItem sx={{width: 200}} onClick={() => {
                 dispatch(goTo({
                     renderAs: "external",

@@ -110,12 +110,15 @@ export default function Topbar() {
                 window.open("/", "_self");
               }}
             >
+
+              <Icon icon="dive" />
               <Typography
                 variant="h6"
                 noWrap
                 component="div"
                 sx={{ 
-                  display: { xs: 'none', sm: 'block' },
+                  ml:2,
+                  display: { xs: 'none', sm: 'block', },
                 }}>
                 {process.env.REACT_APP_NAME}
               </Typography>

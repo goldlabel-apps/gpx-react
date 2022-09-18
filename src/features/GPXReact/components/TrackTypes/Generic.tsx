@@ -42,7 +42,6 @@ export default function Generic(props:any) {
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => setExpanded(!expanded);
   const {track, setMode} = props;
-  console.log ("generic", track)
   if (!track) return null;
 
   const {
