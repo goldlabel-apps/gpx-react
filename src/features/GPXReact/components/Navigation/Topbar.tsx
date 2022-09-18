@@ -116,7 +116,6 @@ export default function Topbar() {
                 component="div"
                 sx={{ 
                   display: { xs: 'none', sm: 'block' },
-                  
                 }}>
                 {process.env.REACT_APP_NAME}
               </Typography>

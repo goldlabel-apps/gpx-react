@@ -14,8 +14,7 @@ const StyledFab = styled(Fab)({
   position: 'absolute',
   zIndex: 1,
   top: -16,
-  left: 0,
-  right: 0,
+  right: 32,
   margin: '0 auto',
 });
 
@@ -30,15 +29,13 @@ export default function Bottombar() {
           boxShadow: "none",  
         }}>
         <Toolbar>
-          <Tooltip title="New Track">
             <StyledFab color="primary"
-            onClick={(e: React.MouseEvent) => {
-              e.preventDefault();
-              console.log ("New GPX");
-            }}>
-              <Icon icon="add" />
+              onClick={(e: React.MouseEvent) => {
+                e.preventDefault();
+                // console.log ("New GPX");
+              }}>
+              <Icon icon="up" />
             </StyledFab>
-          </Tooltip>
           <Box sx={{ flexGrow: 1 }} />
         </Toolbar>
       </AppBar>);

@@ -29,7 +29,7 @@ export default function MenuItems() {
                     dispatch(goTo({
                         renderAs: "external",
                         options: {
-                            url: "https://gpx-react.web.app"
+                            url: "https://divemalta.app"
                         }
                     }));
                     handleMenuClose();
@@ -39,7 +39,7 @@ export default function MenuItems() {
                     </ListItemIcon>
                     <ListItemText>
                         <Typography variant="body2">
-                            PROD
+                            divemalta.app
                         </Typography>
                     </ListItemText>
                 </MenuItem>
