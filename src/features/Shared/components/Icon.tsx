@@ -5,7 +5,8 @@ import * as React from "react"
 import DefaultIcon from "@mui/icons-material/DisabledByDefault"
 import HomeIcon from "@mui/icons-material/Home"
 import ShoppingIcon from "@mui/icons-material/ShoppingBag";
-import EmailIcon from "@mui/icons-material/Email"
+import EmailIcon from "@mui/icons-material/Email";
+import InfiniteMenuIcon from "@mui/icons-material/LinearScale";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import SitesIcon from "@mui/icons-material/Language"
 import SpearoIcon from "@mui/icons-material/Pool"
@@ -121,6 +122,9 @@ export default function Icon(props: any) {
       iconFragment = <ArchiveIcon color={color} />
       break
       
+      case "imenu":
+        iconFragment = <InfiniteMenuIcon color={color} />
+        break
 
       case "notify":
         iconFragment = <NotifyIcon color={color} />

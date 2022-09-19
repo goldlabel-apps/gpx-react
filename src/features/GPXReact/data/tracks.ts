@@ -1,7 +1,30 @@
 import {mdBody_Rozi} from "./md/mdBody_Rozi";
-import {mdBody_DiveGuide} from "./md/mdBody_DiveGuide"
+import {mdBody_DiveGuide} from "./md/mdBody_DiveGuide";
+import {mdBody_UmElFaroud} from "./md/mdBody_UmElFaroud";
 
 const tracks = [
+  { 
+    value: {
+      uid: "ABC_000000001",
+      slug: "umelfaroud",
+      category: "dive",
+      tags: ["shore", "wreck"],
+      icon: "dive",
+      title: "Um El Faroud",
+      excerpt: "MV Um El Faroud was a Libyan oil tanker that was scuttled off the coast of Wied iz-Zurrieq in 1998 as an artificial reef and a scuba diving attraction, after suffering damage in an explosion at the dry docks.",
+      image: "/jpg/UmElFaroud/UmElFaroud.jpg",
+      bodyFormat: "md",
+      body: mdBody_UmElFaroud,
+      links:[
+        {label: "wikipedia.org", value: "http://en.wikipedia.org/wiki/Um_El_Faroud" },
+        {label: "maltadives.com", value: "https://maltadives.com/sites/umelfaroud-wiedizzurrieq" },
+        {label: "wrecksite.eu", value: "http://www.wrecksite.eu/wreck.aspx?97698" },
+        {label: "teesbuiltships.co.uk", value: "http://www.teesbuiltships.co.uk/view.php?ref=170647" },
+        {label: "calypsosac.org", value: "http://www.calypsosac.org/um-el-faroud/" },
+      ],
+    },
+  },
+
   { 
     value: {
       uid: "P_0000000021",

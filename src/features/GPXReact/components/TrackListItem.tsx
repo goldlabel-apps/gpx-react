@@ -40,7 +40,7 @@ export default function TrackListItem(props:any) {
   const dispatch = useFeatureDispatch();
   const handleExpandClick = () => setExpanded(!expanded);
   const {track} = props;
-  const [expanded, setExpanded] = React.useState(true);
+  const [expanded, setExpanded] = React.useState(false);
   if (!track) return null;
   const {
     title,

@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import {
   selectGPXReact,
+  InfiniteMenu,
   TrackListItem,
   Bottombar,
   Topbar,
@@ -39,19 +40,9 @@ export default function GPXReact() {
         <Topbar />
         <Grid container sx={{mb:5}}>
           
-          <Grid item xs={12} md={4}>
-              <Grid container>
-                { !tracks.length ? null : <React.Fragment>
-                { tracks.map((item: any, i: number) => {
-                  return (<Grid 
-                            key={`track_${i}`}
-                            item xs={12}>
-                            <TrackListItem isMobile={isMobile} track={item.value} setMode={"list"}/>
-                          </Grid>)
-                })}
-                </React.Fragment>}
-              </Grid>
-            </Grid>
+          <Grid item xs={12} md={4}>  
+            <InfiniteMenu />
+          </Grid>
 
             <Grid item xs={12} md={8}>
               <Box sx={{pr:1}}>
@@ -70,18 +61,8 @@ export default function GPXReact() {
             <Grid container sx={{mb:10}}>
               
               <Grid item xs={12} md={4}>
-                <Grid container sx={{mt:0.5}}>
-                { !tracks.length ? null : <React.Fragment>
-                  { tracks.map((item: any, i: number) => {
-                            return (<Grid 
-                                      key={`track_${i}`}
-                                      item xs={12}>
-                                      <TrackListItem track={item.value} setMode={"list"}/>
-                                    </Grid>)
-                          })}
-                          </React.Fragment>}
-                </Grid>
-                </Grid>
+                  <InfiniteMenu />
+              </Grid>
               
               <Grid item xs={12} md={8}>
                 <Generic track={track} setMode={"single"} />
