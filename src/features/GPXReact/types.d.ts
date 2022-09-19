@@ -12,9 +12,13 @@
  */
  export as namespace gpxReact;
 
-//  export interface InfiniteMenuShape {
-//   items: Array;
-//  }
+ export type InfiniteMenuShape = {
+  defaultOpen?: boolean;
+ }
+
+ export type WierdShape = {
+  value?: any;
+ }
 
  /*~ You can declare types that are available via importing the module */
  export interface GPXReact {

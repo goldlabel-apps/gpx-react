@@ -7,7 +7,7 @@ const tracks = [
     value: {
       uid: "ABC_000000001",
       slug: "umelfaroud",
-      category: "dive",
+      category: "Diving",
       tags: ["shore", "wreck"],
       icon: "dive",
       title: "Um El Faroud",
@@ -24,17 +24,30 @@ const tracks = [
       ],
     },
   },
-
+  { 
+    value: {
+      uid: "DM_00000asdf21",
+      slug: "abcdivingmalta",
+      category: "advert",
+      tags: ["Shop"],
+      icon: "diveshop",
+      title: "ABC Diving",
+      excerpt: "",
+      image: "/jpg/ABCDiving/ABCDiving.jpg",
+      bodyFormat: "md",
+      body: "ABC Diving is a small, bespoke PADI dive centre set in an idyllic waterfront location at Turtle Bay just up from St Paul’s Bay in Malta.",
+    },
+  }, 
   { 
     value: {
       uid: "P_0000000021",
+      title: "Maltese Islands Dive Guide",
       slug: "malta-dive-guide",
-      category: "diving",
-      tags: ["diving", "Ned Middleton"],
+      category: "Diving",
+      tags: ["by Ned Middleton"],
       icon: "dive",
-      title: "Malta Dive Guide",
       order: 10,
-      excerpt: "Based on 'Maltese Islands Diving Guide' published in 1997 by Ned Middleton",
+      excerpt: "This app is based on the book _Maltese Islands Diving Guide_ published in 1997 by Ned Middleton",
       image: "/jpg/Maltese-Islands-Diving-Guide/Maltese-Islands-Diving-Guide.jpg",
       bodyFormat: "md",
       body: mdBody_DiveGuide,
@@ -49,8 +62,8 @@ const tracks = [
   {
     value: {
       uid: "D_0AB3000002",
-      category: "diving",
-      tags:["west"],
+      category: "Diving",
+      tags:["Cave", "Wreck"],
       title: "Anchor Bay",
       excerpt: "AKA Scorpion Cave & Popeye Village",
       icon: "dive",
@@ -65,8 +78,8 @@ const tracks = [
     value: {
       uid: "D_66RZ000002",
       slug: "rozi",
-      category: "diving",
-      tags:[],
+      category: "Diving",
+      tags:["Wreck"],
       icon: "dive",
       title: "Rozi",
       order: 20,
@@ -99,7 +112,7 @@ const tracks = [
         slug: "spearfishing",
         icon: "spearo",
         category: "spearfishing",
-        tags: ["spearo"],
+        tags: ["Spearo"],
         title: "Spearfishing",
         order: 40,
         image: "/jpg/Spearfishing/Spearfishing.jpg",
@@ -123,7 +136,7 @@ const tracks = [
         icon: "diving",
         title: "Xlendi",
         category: "diving",
-        tags:["caves", "xlendi", "shore"],
+        tags:["Cave", "Shore"],
         image: "/jpg/XlendiCaves/XlendiCaves.jpg",
         excerpt: "If you enter the water on the left hand side of the valley by the fifth ladder and following a compass heading of 300 degrees you will find the entrance to Xlendi Cave and the tunnel entrance is located just 2 metres deep on the cliff side",
         bodyFormat:"html",
@@ -145,7 +158,7 @@ const tracks = [
         excerpt: "Buy the right gear",
         slug: "decathlon",
         icon: "shopping",
-        category: "shopping",
+        category: "Dive Gear",
         image: "/jpg/Decathlon/Decathlon.jpg",
         bodyFormat: "md",
         body: "> TO SUSTAINABLY MAKE THE PLEASURE AND BENEFITS OF SPORT ACCESSIBLE TO THE MANY",
@@ -157,20 +170,7 @@ const tracks = [
         ],
       },
     },
-    { 
-      value: {
-        uid: "DM_00000asdf21",
-        slug: "abcdivingmalta",
-        category: "advert",
-        tags: ["dive shop"],
-        icon: "spearo",
-        title: "ABC Diving",
-        excerpt: "",
-        image: "/jpg/ABCDiving/ABCDiving.jpg",
-        bodyFormat: "md",
-        body: "ABC Diving is a small, bespoke PADI dive centre set in an idyllic waterfront location at Turtle Bay just up from St Paul’s Bay in Malta.",
-      },
-    },    
+       
   ]
 
 export { tracks }

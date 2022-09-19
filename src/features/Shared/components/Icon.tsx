@@ -7,6 +7,7 @@ import HomeIcon from "@mui/icons-material/Home"
 import ShoppingIcon from "@mui/icons-material/ShoppingBag";
 import EmailIcon from "@mui/icons-material/Email";
 import InfiniteMenuIcon from "@mui/icons-material/LinearScale";
+import DiveShopIcon from "@mui/icons-material/BeachAccess";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import SitesIcon from "@mui/icons-material/Language"
 import SpearoIcon from "@mui/icons-material/Pool"
@@ -104,10 +105,14 @@ export default function Icon(props: any) {
         iconFragment = <LockedIcon color={color} />
         break
 
-        case "shopping":
-          iconFragment = <ShoppingIcon color={color} />
-          break
+    case "shopping":
+      iconFragment = <ShoppingIcon color={color} />
+      break
 
+      case "diveshop":
+        iconFragment = <DiveShopIcon color={color} />
+        break
+          
     case "persona":
       iconFragment = <PersonaIcon color={color} />
       break

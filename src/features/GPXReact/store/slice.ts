@@ -10,6 +10,7 @@ export interface GPXReactSlice {
   newItem: any
   newItemValue: string
   tracks: any
+  showInfiniteMenu: boolean
 }
 
 const initialState: GPXReactSlice = {
@@ -20,6 +21,7 @@ const initialState: GPXReactSlice = {
   newItem: null,
   newItemValue: "",
   tracks,
+  showInfiniteMenu: true,
 }
 
 export const gpxreactSlice = createSlice({

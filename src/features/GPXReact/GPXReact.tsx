@@ -4,14 +4,13 @@ import {
 } from "../Shared/store/hooks";
 import {useLocation} from "react-router-dom";
 import {
-  useMediaQuery,
+  // useMediaQuery,
   Box,
   Grid,
 } from "@mui/material";
 import {
   selectGPXReact,
   InfiniteMenu,
-  TrackListItem,
   Bottombar,
   Topbar,
   Generic,
@@ -19,15 +18,13 @@ import {
 } from "../GPXReact";
 
 export default function GPXReact() {
-  const isMobile = useMediaQuery("(min-width:900px)");
   const gpxReact = useFeatureSelect( selectGPXReact );
-  const {tracks} = gpxReact;
   const location = useLocation();
   const {pathname} = location;
-  
+  const {tracks} = gpxReact;
+  // console.log ("tracks",tracks );
   let track = null;
   let trackPath = pathname;
-
   for(let i =0; i < tracks.length; i++){
     if (trackPath.slice(1,trackPath.length) === tracks[i].value.slug){
       track = tracks[i];
@@ -39,17 +36,14 @@ export default function GPXReact() {
       <React.Fragment>
         <Topbar />
         <Grid container sx={{mb:5}}>
-          
           <Grid item xs={12} md={4}>  
-            <InfiniteMenu />
+            <InfiniteMenu defaultOpen />
           </Grid>
-
-            <Grid item xs={12} md={8}>
-              <Box sx={{pr:1}}>
-                <Advert />
-              </Box>
-            </Grid>
-
+          <Grid item xs={12} md={8}>
+            <Box sx={{pr:1}}>
+              <Advert />
+            </Box>
+          </Grid>
           </Grid>
         <Bottombar />
       </React.Fragment>
@@ -59,11 +53,9 @@ export default function GPXReact() {
   return (<React.Fragment>
             <Topbar />
             <Grid container sx={{mb:10}}>
-              
               <Grid item xs={12} md={4}>
                   <InfiniteMenu />
               </Grid>
-              
               <Grid item xs={12} md={8}>
                 <Generic track={track} setMode={"single"} />
               </Grid>
